@@ -1,50 +1,45 @@
-<h1><b>My WebSite</b></h1>
+# My WebSite
 
-<h3>My website created in Python language using Flask framework.</h3>
+### My website created in Python language using Flask framework.
 
-<h4>I invite you to see it here:</h4>
+#### I invite you to see it here:
 <url>https://gabriel-kozlowski-website.onrender.com/</url>
-<h6>The page takes a while to load</h6>
+###### The page takes a while to load
 
-## <h2>Lists of content</h2>
-######<ul>
+## Lists of content
+###<ul>
     <li>[General info](https://github.com/GabrielKozlowski/My_Website/blob/master/README.md#general-info)</li>
     <li>[Technologies](https://github.com/GabrielKozlowski/My_Website/blob/master/README.md#technologies)</li>
     <li>[Python library](https://github.com/GabrielKozlowski/My_Website/blob/master/README.md#python-library)</li>
     <li>[Status](https://github.com/GabrielKozlowski/My_Website/blob/master/README.md#status)</li>
 </ul>
 
-<h2><b>General Info</b></h2>
+## General Info
 
-<h3>A website where you can write Posts, Comments and Chat messages.</h3>
+### A website where you can write Posts, Comments and Chat messages.
 
 <img src="/static/images/posts_foto.png">
 <img src="/static/images/comment_foto.png">
 <img src="/static/images/chat_foto.png">
 
 
-
-
-<h3>The website includes API connections for weather and currency exchange rates.</h3>
+### The website includes API connections for weather and currency exchange rates.
 
 <img src="/static/images/currency_weather_foto.png">
 
 
-
-<h3>There are also programs such as 
-Calculator, Price scrapper, Vat Calculator, YouTube Information or 
-a program to calculate days from the date of birth.</h3>
+### There are also programs such as 
+### Calculator, Price scrapper, Vat Calculator, YouTube Information or 
+### a program to calculate days from the date of birth.
 
 <img src="/static/images/programs_foto.png">
 
-<h3>There is also a mini game such as the famous Snake.</h3>
+### There is also a mini game such as the famous Snake.
 
 <img src="/static/images/snake_foto.png">
 
 
-
-
-<h2><b>Technologies</b></h2>
+## Technologies
 
 <ul>
     <li>Python 3.11.2</li>
@@ -52,7 +47,7 @@ a program to calculate days from the date of birth.</h3>
     <li>Gunicorn  20.1.0</li>
 </ul>
 
-<h2><b>Python library</b></h2>
+## Python library
 
 <ul>
     <li>Flask - framework</li>
@@ -64,7 +59,7 @@ a program to calculate days from the date of birth.</h3>
 </ul>
 
 
-<h2><b>Status</b></h2>
+## Status
 
-<h3>This project is now complete.</h3>
-<h3>It is updated from time to time.</h3>
+### This project is now complete.
+### It is updated from time to time.
