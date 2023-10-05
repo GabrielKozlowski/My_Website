@@ -6,6 +6,13 @@
 <url>https://gabriel-kozlowski-website.onrender.com/</url>
 <h5>The page takes a while to load</h5>
 
+<h2>Lists of content</h2>
+<li>[General info](https://github.com/GabrielKozlowski/My_Website/blob/master/README.md#general-info)</li>
+<li>[Technologies](https://github.com/GabrielKozlowski/My_Website/blob/master/README.md#technologies)</li>
+<li>[Python library](https://github.com/GabrielKozlowski/My_Website/blob/master/README.md#python-library)</li>
+<li>[Status](https://github.com/GabrielKozlowski/My_Website/blob/master/README.md#status)</li>
+
+
 <h2><b>General Info</b></h2>
 
 <h3>A website where you can write Posts, Comments and Chat messages.</h3>
@@ -58,4 +65,4 @@ a program to calculate days from the date of birth.</h3>
 
 <h2><b>Status</b></h2>
 
-<h3>This project is now <b><u>complete</b></u> but is also being updated.</h3>
+<h3>This project is now <b><u>complete</u></b> but is also being updated.</h3>
