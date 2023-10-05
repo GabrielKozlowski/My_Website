@@ -7,6 +7,7 @@
 <h6>The page takes a while to load</h6>
 
 <h2>Lists of content</h2>
+[General info](https://github.com/GabrielKozlowski/My_Website/blob/master/README.md#general-info)
 <li>[General info](https://github.com/GabrielKozlowski/My_Website/blob/master/README.md#general-info)</li>
 <li>[Technologies](https://github.com/GabrielKozlowski/My_Website/blob/master/README.md#technologies)</li>
 <li>[Python library](https://github.com/GabrielKozlowski/My_Website/blob/master/README.md#python-library)</li>
