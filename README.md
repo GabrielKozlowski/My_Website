@@ -58,4 +58,4 @@ a program to calculate days from the date of birth.</h3>
 
 <h2><b>Status</b></h2>
 
-<h3>This project is now <b><u>complete</u></b>b> but is also being updated.</h3>
+<h3>This project is now <b><u>completed</u></b> but is also being updated.</h3>
