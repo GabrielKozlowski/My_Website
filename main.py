@@ -14,7 +14,6 @@ import uuid as uuid
 from datetime import datetime, date
 
 from webforms.webforms import UserName, PasswordForm, LoginForm, UserForm, SearchForm, PostForm
-from passwords.connect_to_db import pass_to_db
 from passwords.weather_api_key import API_WEATHER_KEY
 from passwords.exchange_api_key import API_EXCHANGE_KEY
 from programs.currency_list import currency_list
