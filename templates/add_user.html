@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+{% for message in get_flashed_messages() %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+
+
+
+{% if name %}
+    <h1>Congratulations {{ name }} you created account</h1>
+    <br/><br/>
+    <a href="{{url_for('home') }}" class="btn btn-outline-primary btn-vsm-40">Home</a>
+    <a href="{{ url_for('login') }}" class="btn btn-outline-primary btn-vsm-40">Login</a>
+
+    
+{% else %}
+<h1 class="text_registration_in_adduser_page">Registration:</h1>
+
+<div class="shadow p-3 mb-5 bg-body-tertiary">
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <b>{{ form.name.label(class="form-label") }}:</b>
+
+        {{ form.name(class="form-control", id='label-text', placeholder='Enter your name') }}
+        <br/>
+
+        <b>{{ form.username.label(class="form-label") }}:</b>
+
+        {{ form.username(class="form-control", id='label-text', placeholder='Username for login') }}
+        <br/>
+
+
+        <b>{{ form.email.label(class="form-label") }}:</b>
+
+        {{ form.email(class="form-control", placeholder='Enter your email') }}
+        <br/>
+
+        <b>{{ form.city.label(class="form-label")}}:</b>
+
+        {{ form.city(class="form-control", placeholder='Enter city for weather. Default is Warszawa') }}
+        <br/>
+
+        <b>{{ form.password_hash.label(class="form-label")}}:</b>
+
+        {{ form.password_hash(class="form-control", placeholder='Enter your password') }}
+        <br/>
+
+        <b>{{ form.password_hash2.label(class="form-label")}}:</b>
+
+        {{ form.password_hash2(class="form-control", placeholder='Confirm your password') }}
+
+        <br/>
+        {{ form.submit(class="btn btn-outline-success") }}
+        <br/><br/>
+        <small>Allready have an account? <a href="{{ url_for('login') }}">Login Here!</a></small>
+
+    </form>
+</div>
+
+
+{% endif %}
+
+
+
+{% endblock %}

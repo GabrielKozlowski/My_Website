@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+
+
+<section class="calculator_section">
+    <div class="calculator_div">
+        <div class="calculator">
+            <div class="calculator_output">
+                <div class="previous_result"></div>
+                <div class="current_result"></div>
+            </div>
+
+            <button class="calculator_button percent">%</button>
+            <button class="calculator_button clear_current">CE</button>
+            <button class="calculator_button clear_all">C</button>
+            <button class="calculator_button backspace">&#8920;</button>
+            <button class="calculator_button one_division_by">&#185;/x</button>
+            <button class="calculator_button operator power_by_two">^</button>
+            <button class="calculator_button operator square_root">&#8730;</button>
+            <button class="calculator_button operator divide">&#247;</button>
+            <button class="calculator_button number seven_button">7</button>
+            <button class="calculator_button number eight_button">8</button>
+            <button class="calculator_button number nine_button">9</button>
+            <button class="calculator_button operator multiplication_button">&#215;</button>
+            <button class="calculator_button number four_button">4</button>
+            <button class="calculator_button number five_button">5</button>
+            <button class="calculator_button number six_button">6</button>
+            <button class="calculator_button operator subtraction_button">&#8722;</button>
+            <button class="calculator_button number one_button">1</button>
+            <button class="calculator_button number two_button">2</button>
+            <button class="calculator_button number three_button">3</button>
+            <button class="calculator_button operator addition_button">&#43;</button>
+            <button class="calculator_button negative_button">+/-</button>
+            <button class="calculator_button number zero_button">0</button>
+            <button class="calculator_button number comma_button">.</button>
+            <button class="calculator_button sum_button">&#61;</button>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

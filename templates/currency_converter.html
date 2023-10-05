@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+
+
+<section class="section_currency_converter">
+    <form method="POST" action="{{ url_for('currency_converter') }}" class="form_currency_converter">
+        <div class="converters_of_currency">
+            <div class="currency_converter_buttons">
+                <button id="currency_converter_title" class="currency_converter_title currency_title_button" type="button"">Currency Converter</button>
+                <button id="currency_converter_in_date_title" class="currency_converter_in_date_title currency_title_button" type="button">Currency In Date</button> 
+                <button id="currency_converter_list_title" class="currency_converter_list_title currency_title_button" type="button">Currency list</button>
+            </div>
+            <div id="currency_converter_stuff" class="currency_converter_stuff " style="display: none;">
+                <p class="currency_converter_from currency_p">From What Currency:</p>
+                <input type="text" name="convert_from" id="convert_from" class="input_from" placeholder="From e.g. GBP" style="width: 100%;"><br/>
+                <p class="currency_converter_to currency_p">To Which Currency/Currencies:</p>
+                <input type="text" name="convert_to" id="convert_to" class="input_to" placeholder="To e.g. USD,EUR,PLN" style="width: 100%;"><br/>
+                <button href="{{ url_for('currency_converter') }}" class="currency_converter_submit_button btn btn-outline-success btn-sm">Submit</button>
+            </div>
+            <div id="currency_converter_in_date_stuff" class="currency_converter_in_date_stuff" style="display: none;">
+                <div class="currency_converter_in_date_stuff_top">
+                    <div class="currency_converter_in_date_stuff_top_left">
+                        <p class="currency_converter_in_date_from currency_p">From What Currency:</p>
+                        <input type="text" name="convert_from_in_date" id="convert_from_in_date" class="input_from" placeholder="From e.g. GBP" style="width: 100%;"><br/>
+                        <p class="currency_converter_in_date_to currency_p">To Which Currency/Currencies:</p>
+                        <input type="text" name="convert_to_in_date" id="convert_to_in_date" class="input_to" placeholder="To e.g. USD,EUR,PLN" style="width: 100%;"><br/>
+                    </div>
+                    <div class="currency_converter_in_date_stuff_top_right">
+                        <p class="currency_converter_in_date_from_date currency_p">From Date:</p>
+                        <input type="text" name="convert_from_date" id="convert_from_date" class="input_from" placeholder="From Date e.g. 2023-05-01" style="width: 100%;"><br/>
+                        <p class="currency_converter_in_date_to_date currency_p">To Date:</p>
+                        <input type="text" name="convert_to_date" id="convert_to_date" class="input_to" placeholder="To Date e.g. 2023-05-05" style="width: 100%;"><br/> 
+                    </div>
+                </div>
+                <div class="currency_converter_in_date_stuff_bottom">
+                    <button href="{{ url_for('currency_converter') }}" id="currency_converter_in_date_button" type="submit" class="currency_converter_submit_button btn btn-outline-success btn-sm" style="width: 50%;">Submit</button>
+                </div>
+            </div>
+            <div id="currency_converter_list_names" class="currency_converter_list_names" style="display: none;">
+                <button id="currency_converter_show_list_names_button" class="currency_converter_show_list_names_button btn btn-outline-success btn-sm" type="button">Show List</button>
+                <button id="currency_converter_hide_list_names_button" class="currency_converter_hide_list_names_button btn btn-outline-success btn-sm" type="button" style="display: none;">Hide List</button>
+            </div>
+        </div>
+    </form>
+</section>
+
+<section class="section_currency_output" id="section_currency_output">
+    
+    <div class="currency_converter_output">
+        
+        <div class="changes_from" id="changes_from">
+            <div class="changes_outputs">
+                {% if changes %}
+                    <p class="download_data">Download Data:</p>
+                    <div class="download_currency_data">                        
+                        <a class="get_currency_data_button" href="{{ url_for('download_currency_data', obj='csv')}}" download >CSV</a>                        
+                        <a class="get_currency_data_button" href="{{ url_for('download_currency_data', obj='json')}}" download >JSON</a>                        
+                    </div>
+                    <div class="changes_outputs_from">                    
+                        <p class="changes_output_from_name changes_from_p_name" style="margin-right: 0;">From Currency: </p>
+                        <p class="changes_output_from_value changes_from_p_value">1 {{ change_from }}</p>
+                        {% if changes | length > 1 %}<p class="changes_outputs_equal">=</p>
+                        {% else %}<p class="changes_outputs_to">To</p>
+                        {% endif %}
+                    </div>
+                    {% if changes | length > 1 %}
+                        <div class="changes_outputs_value">
+                            {% for currency, amound in changes.items() %}
+                                <p class="changes_output_from_currency_name changes_from_p_name">{{ currency }}:</p>
+                                <p class="changes_output_from_currency_value changes_from_p_value">{{ amound }}</p>
+                            {% endfor %} 
+                        </div>                      
+                    {% else %}
+                        <div class="changes_outputs_value_one">
+                            {% for currency, amound in changes.items() %}                            
+                                <p class="changes_output_from_currency_name changes_from_p_name_one">{{ currency }}:</p>
+                                <p class="changes_output_from_currency_value changes_from_p_value_one">{{ amound }}</p>
+                            {% endfor %}
+                        </div>                        
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="date_changes_from" id="date_changes_from">
+            <div class="date_changes_outputs">
+                {% if date_changes %}
+                    <p class="download_data">Download Data:</p>
+                    <div class="download_currency_data">                        
+                        <a class="get_currency_data_button" href="{{ url_for('download_currency_data', obj='csv')}}" download >CSV</a>                        
+                        <a class="get_currency_data_button" href="{{ url_for('download_currency_data', obj='json')}}" download >JSON</a>                        
+                    </div>
+                    <div class="date_changes_outputs_from">                    
+                        <p class="date_changes_output_from_name date_changes_from_p_name">From Currency: </p>
+                        <p class="date_changes_output_from_value date_changes_from_p_value">1 {{ change_from }}</p>
+                        <p class="date_changes_outputs_to date_changes_from_p_name">To</p>
+                    </div>
+                    <div class="date_changes_outputs_value">
+                        <div class="date_changes_output_columns">
+                            {% for date, exchange in date_changes.items() %}                            
+                            <div class="date_changes_value"> 
+                            <p class="date_changes_date">{{ date }}</p> 
+                                <div class="date_changes_output_grup">
+                                {% for change, amound in exchange.items() %}                            
+                                        <div class="date_changes_output_stuff">
+                                            <p class="date_changes_number_one date_changes_output_amound">1</p>
+                                            <p class="date_changes_name_from">{{ change_from }}</p>
+                                            <p class="date_changes_equal_sign">=</p>
+                                            <p class="date_changes_amound">{{ "%.3f"|format(amound) }}</p>
+                                            <p class="date_changes_name">{{ change }}</p>                                                                                        
+                                        </div>
+                                {% endfor %}    
+                                </div> 
+                            </div>
+                            {% endfor %}
+                        </div>
+                        
+                    </div>                
+                {% endif %}  
+            </div>
+        </div>
+        
+        <div class="currency_list" id="currency_list" style="display: none;">
+            {% if list_of_currency %}
+                {% for code, name in list_of_currency.items() %}
+                    <div class="list_of_currency_list">
+                        <li>
+                            <p class="currency_list_code">{{ code }}</p>, - <p class="currency_list_name">{{ name }}</p>
+                        </li>
+                    </div>
+                {% endfor %}
+            {% endif %}    
+        </div>        
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+{% endblock %}

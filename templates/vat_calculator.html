@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+
+
+<section class="vat_calculator_section">
+    <div class="vat_calculator">
+        <form method="POST" >
+            <h1 class="vat_calculator_h1">Vat Calculator</h1>
+            <div class="container_vat_calculator">
+                <button id="gross_to_net_button" class="vat_calculator_button vat_calculator_gross_to_net" type="button">Exclude VAT</button>
+                <button id="net_to_gross_button" class="vat_calculator_button vat_calculator_net_to_gross" type="button">Add VAT</button>
+            </div>
+            <div class="vat_calculator_stuff">
+                <div id="gross_to_net_stuff" class="gross_to_net_stuff">                    
+                    <div id="gross_to_net_input" class="gross_to_net_input">
+                        <p class="gross_to_net_gross_value_name">Amount</p>
+                        <input type="number" id="gross_to_net_gross_value" class="gross_to_net_gross_value vat_calculator_inputs" placeholder="Gross e.g 1000">
+                        <p class="gross_to_net_vat_value_name">Vat Rate (%) </p>
+                        <input type="number" id="gross_to_net_vat_value" class="gross_to_net_vat_value vat_calculator_inputs" placeholder="Vat % e.g 23">
+                        <p class="gross_to_net_net_value_name">Net Price </p>
+                        <input type="number" id="gross_to_net_net_value" class="gross_to_net_net_value vat_calculator_inputs" placeholder="0" disabled= true>                        
+                    </div>
+                    <button id="gross_to_net_submit_button" class="gross_to_net_submit_button btn btn-sm btn-outline-success"  type="button">Submit</button>
+                </div>
+                <div id="net_to_gross_stuff" class="net_to_gross_stuff">
+                    <div id="net_to_gross_input" class="net_to_gross_input">
+                        <p class="net_to_gross_net_value_name">Amount</p>
+                        <input type="number" id="net_to_gross_net_value" class="net_to_gross_gross_value vat_calculator_inputs" placeholder="Gross e.g 1000">
+                        <p class="net_to_gross_vat_value_name">Vat Rate (%) </p>
+                        <input type="number" id="net_to_gross_vat_value" class="net_to_gross_vat_value vat_calculator_inputs" placeholder="Vat % e.g 23">
+                        <p class="net_to_gross_gross_value_name">Gross Price </p>
+                        <input type="number" id="net_to_gross_gross_value" class="net_to_gross_net_value vat_calculator_inputs" placeholder="0" disabled= true>                        
+                    </div>
+                    <button id="net_to_gross_submit_button" class="net_to_gross_submit_button btn btn-sm btn-outline-success"  type="button">Submit</button>
+                </div>
+            </div>
+        </form> 
+    </div>
+</section>
+
+{% endblock %}

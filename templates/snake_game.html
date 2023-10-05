@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+
+
+<div class="snake_conatainer">
+    <h1 class="snake_h1">Snake</h1>
+    <div class="snake_options">
+        <div class="game_best_score">            
+            <p class="high_pc_score">High Pc Score: 0</p>
+            <p class="high_mobile_score">High Mobile Score: 0</p>
+        </div>
+        <button class="snake_reset_button">
+            Reset
+        </button>
+        <div class="game_score">
+            <p class="player_score">Score: 0</p>
+        </div>
+    </div>
+    <canvas class="snake_board" id="snake_board"></canvas>   
+    <div class="controls">
+        <button class="arrow arrow_left"></button>
+        <button class="arrow arrow_up"></button>
+        <button class="arrow arrow_down"></button>
+        <button class="arrow arrow_right"></button>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

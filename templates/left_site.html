@@ -1,0 +1,87 @@
+
+
+<section class="section_currency_converter">
+    <div class="container_currency_converter">
+        <form class="currency_converter_inputs mb-3" method="POST" action="{{ url_for('currency_converter') }}">
+            <p class="currency_converter_name">Currency Converter</p>
+            <input type="text" name="convert_from" id="convert_from" class="input_from" placeholder="From e.g. GBP"><br/>
+            <input type="text" name="convert_to" id="convert_to" class="input_to mb-3" placeholder="To e.g. USD,EUR,PLN"><br/>
+
+
+            {% if current_user.is_authenticated %}
+            <button href="{{ url_for('currency_converter') }}" class="currency_converter_submit_button_left_site currency_converter_submit_button btn btn-outline-success btn-sm">Submit</button>
+            <a href="{{ url_for('currency') }}" id="currency_converter_more_options" type="button" class="currency_converter_more_options_button btn btn-outline-primary btn-sm">More Options</a>
+            {% else %}
+            <button class="btn btn-outline-success">Login First</button>
+            {% endif %}
+        </form>
+    </div>
+</section>
+
+
+
+<section class="left_site_programs">
+    <div class="container_programs" method="POST">
+        <samp class="text_programs">Programs</samp>
+        <div class="container_time_since_birth_left_site programs_container_left_site">
+            <samp class="text_time_since_birth name_program_left_site">Time Since Birth</samp>
+            {% if current_user.is_authenticated %}
+            <a href="{{ url_for('time_since_birth') }}" class="button_time_since_birth btn btn-outline-success programs_button_open">Open</a>
+            {% else %}
+            <a href="{{ url_for('login') }}" class="button_time_since_birth btn btn-outline-success programs_button_open">Login First</a>
+            {% endif %}
+        </div>
+        <div class="container_calculator_left_site programs_container_left_site">
+            <samp class="text_calculator name_program_left_site">Calculator</samp>
+            {% if current_user.is_authenticated %}
+            <a href="{{ url_for('calculator') }}" class="button_calculator btn btn-outline-success programs_button_open">Open</a>
+            {% else %}
+            <a href="{{ url_for('login') }}" class="button_calculator btn btn-outline-success programs_button_open">Login First</a>
+            {% endif %}
+        </div>
+        <div class="container_vat_calculator_left_site programs_container_left_site">
+            <samp class="text_vat_calculator name_program_left_site">Vat Calculator</samp>
+            {% if current_user.is_authenticated %}
+            <a href="{{ url_for('vat_calculator') }}" class="button_vat_calculator btn btn-outline-success programs_button_open">Open</a>
+            {% else %}
+            <a href="{{ url_for('login') }}" class="button_vat_calculator btn btn-outline-success programs_button_open">Login First</a>
+            {% endif %}
+        </div>
+        <div class="container_yt_downloader_left_site programs_container_left_site">
+            {% if current_user.id == 9 or current_user.id == 11 or current_user.id == 12 or current_user.id == 13 or current_user.id == 14 %}
+            <samp class="text_yt_downloader name_program_left_site">YT Downloader</samp>
+            {% else %}
+            <samp class="text_yt_downloader name_program_left_site">YouTube Info</samp>
+            {% endif %}
+            {% if current_user.is_authenticated %}
+            <a href="{{ url_for('yt_downloader') }}" class="button_yt_downloader btn btn-outline-success programs_button_open">Open</a>
+            {% else %}
+            <a href="{{ url_for('login') }}" class="button_yt_downloader btn btn-outline-success programs_button_open">Login First</a>
+            {% endif %}
+        </div>
+        <div class="prices_scraper_left_site programs_container_left_site">
+            <samp class="text_prices_scraper name_program_left_site">Prices Scraper</samp>            
+            {% if current_user.is_authenticated %}
+            <a href="{{ url_for('prices_scraper') }}" class="button_prices_scraper btn btn-outline-success programs_button_open">Open</a>
+            {% else %}
+            <a href="{{ url_for('login') }}" class="button_prices_scraper btn btn-outline-success programs_button_open">Login First</a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+
+<section class="left_site_games">
+    <div class="container_games" method="POST">
+        <samp class="text_games">Games</samp>
+        <div class="container_snake_left_site games_container_left_site">
+            <samp class="text_snake_game name_game_left_site">Snake</samp>
+            {% if current_user.is_authenticated %}
+            <a href="{{ url_for('snake_game') }}" class="games_button_play btn btn-outline-success games_button_open">Play</a>
+            {% else %}
+            <a href="{{ url_for('login') }}" class="games_button_play btn btn-outline-success games_button_open">Login First</a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+

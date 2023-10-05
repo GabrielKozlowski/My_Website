@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+
+
+
+
+<section class="yt_video_section">    
+    <div class="yt_video_div">
+        {% if current_user.id == 9 or current_user.id == 11 or current_user.id == 12 or current_user.id == 13 or current_user.id == 14 %}
+        <h1 class="yt_downloader_h1">YouTube Downloader</h1>
+        {% else %}
+        <h1 class="yt_downloader_h1">YouTube Information</h1>
+        {% endif %}
+        <form action="{{ url_for('yt_video') }}" class="yt_video_form" method="POST">
+            <div class="yt_video_url">
+                <input type="text" class="yt_video_input" name="yt_video_input" id="yt_video_input" placeholder="Enter YouTube Url Here." required="required">
+            </div>
+            
+            {% if not stream_info %}
+                <button class="yt_video_submit_button">Add Link</button>
+                <img class="loading-forever-icon" src="/static/images/loading-forever.gif" style="visibility: hidden">
+            {% else %}
+                <a href="{{ url_for('yt_downloader') }}"  class="yt_video_refresh_button">Refresh</a>
+            {% endif %}
+        </form>
+    </div>
+</section>
+
+
+{% if errors %}
+    {{ errors }}
+{% else %}
+    {% if stream_info %}
+    <section class="yt_video_stream_info">
+        <div class="yt_video_div_stream_info">
+            <p class="yt_stream_info_url yt_stream_info_p">Url:</p> <a href="{{ stream_info['Url'] }}" class="url_to_video">{{ stream_info['Url'] }}</a>        
+            <div class="yt_stream_info_div">
+                <p class="yt_stream_info_author yt_stream_info_p">Author: <samp class="yt_stream_info_author_samp yt_stream_info_samp">{{ stream_info['Author'] }}</samp></p>
+                <p class="yt_stream_info_title yt_stream_info_p">Title: <samp name="yt_stream_info_title_samp" class="yt_stream_info_title_samp yt_stream_info_samp">{{ stream_info['Title'] }}</samp></p>
+                <p class="yt_stream_info_length yt_stream_info_p">Length: <samp class="yt_stream_info_length_samp yt_stream_info_samp">{{ stream_info['Length'] }}</samp></p>
+                <p class="yt_stream_info_views yt_stream_info_p">Views: <samp class="yt_stream_info_views_samp yt_stream_info_samp">{{ stream_info['Views'] }}</samp></p>
+            </div>
+            <p class="yt_stream_info_channel yt_stream_info_p">Channel:</p> <a href="{{ stream_info['Channel_url'] }}" class="url_to_channel">{{ stream_info['Channel_url'] }}</a>   
+        </div>
+    </section>
+    {% endif %}
+{% endif %}
+
+{% if current_user.id == 9 or current_user.id == 11 or current_user.id == 12 or current_user.id == 13 or current_user.id == 14 %}
+<section class="download_yt_video">
+    <div class="download_yt_div">
+        {% if stream_info %}
+            <p class="download_yt_video_text">DOWNLOAD FILE</p>
+            <div class="download_yt_video_div">            
+                    <a type="button" href="/yt_video/mp3/{{ stream_info['Author'] }}/{{ stream_info['Title'] }}" class="download_yt_video_mp3 download_yt_video_button">MP3</a>
+                    {% if mp4_error %}
+                        <a type="button" class="download_yt_video_mp4 download_yt_video_button">NO MP4</a>
+                    {% else %}
+                        <a type="button" href="/yt_video/mp4/{{ stream_info['Author'] }}/{{ stream_info['Title'] }}" class="download_yt_video_mp4 download_yt_video_button">MP4</a>
+                    {% endif %}            
+            </div>   
+        {% endif %}
+    </div>
+</section>
+{% endif %}
+
+
+
+{% endblock %}

@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+
+<section class="prices_scraper_section">    
+    <div class="prices_scraper_div">
+        <div class="prices_scraper_upper">
+            <h1 class="prices_scraper_h1">Prices Scraper</h1>
+            <div class="prices_scraper_choice_options">
+                {% if current_user.id == 9 %}
+                    <div class="prices_scraper_choice_XX">
+                        <button type="button" id="prices_scraper_XX" class="prices_scraper_XX prices_scraper_choice_button">XX</button>
+                    </div>              
+                    <div class="prices_scraper_choice_ceneo">
+                        <button type="button" id="prices_scraper_ceneo" class="prices_scraper_ceneo prices_scraper_choice_button">Ceneo</button>
+                    </div>
+                    <div class="prices_scraper_choice_YY">
+                        <button type="button" id="prices_scraper_YY" class="prices_scraper_YY prices_scraper_choice_button">YY</button>
+                    </div>
+                {% else %}
+                    <div class="prices_scraper_choice_XX" style="visibility: hidden;">
+                        <button type="button" id="prices_scraper_XX" class="prices_scraper_XX prices_scraper_choice_button">XX</button>
+                    </div>              
+                    <div class="prices_scraper_choice_ceneo">
+                        <button type="button" id="prices_scraper_ceneo" class="prices_scraper_ceneo prices_scraper_choice_button">Ceneo</button>
+                    </div>
+                    <div class="prices_scraper_choice_YY" style="visibility: hidden;">
+                        <button type="button" id="prices_scraper_YY" class="prices_scraper_YY prices_scraper_choice_button">YY</button>
+                    </div>                
+                {% endif %} 
+            </div>
+        </div>
+        <div class="prices_scraper_bottom">
+            <div id="prices_scraper_bottom_div_ceneo" class="prices_scraper_bottom_div_ceneo" style="display: none;">
+                <form action="{{ url_for('prices_scraper_ceneo') }}" class="prices_scraper_form_ceneo" method="POST">
+                    <div class="prices_scraper_ceneo_information">
+                        <p class="prices_scraper_ceneo_text">Past your products urls to the fields below.</p>
+                    </div>
+                    <div class="prices_scraper_ceneo_urls">
+                        <input type="text" name="prices_scraper_ceneo_first_input" class="prices_scraper_ceneo_first_input prices_scraper_input" placeholder="Enter First Ceneo Product Url Here.">
+                        <input type="text" name="prices_scraper_ceneo_second_input" class="prices_scraper_ceneo_second_input prices_scraper_input" placeholder="Enter Second Ceneo Product Url Here.">
+                    </div>
+                    <div class="prices_scraper_ceneo_button_div">
+                        <button class="prices_scraper_ceneo_button">Search Products</button>
+                    </div>                    
+                </form>                    
+            </div>
+            <div id="prices_scraper_bottom_div_XX" class="prices_scraper_bottom_div_XX" style="display: none;">
+                <form action="{{ url_for('prices_scraper_xx') }}" class="prices_scraper_form_XX" method="POST">
+                    <div class="prices_scraper_XX_information">
+                        <p class="prices_scraper_XX_text">Past your products urls to the fields below.</p>
+                    </div>
+                    <div class="prices_scraper_XX_urls">
+                        <input type="text" class="prices_scraper_XX_first_input prices_scraper_input" placeholder="Enter First XX Product Url Here.">
+                        <input type="text" class="prices_scraper_XX_second_input prices_scraper_input" placeholder="Enter Second XX Product Url Here.">
+                    </div>
+                    <div class="prices_scraper_XX_button_div">
+                        <button class="prices_scraper_XX_button">Search Products</button>
+                    </div>   
+                </form>    
+            </div>
+            <div id="prices_scraper_bottom_div_YY" class="prices_scraper_bottom_div_YY" style="display: none;">
+                <form action="{{ url_for('prices_scraper_yy') }}" class="prices_scraper_form_YY" method="POST">
+                    <div class="prices_scraper_YY_information">
+                        <p class="prices_scraper_YY_text">Past your products urls to the fields below.</p>
+                    </div>
+                    <div class="prices_scraper_YY_urls">
+                        <input type="text" class="prices_scraper_YY_first_input prices_scraper_input" placeholder="Enter First YY Product Url Here.">
+                        <input type="text" class="prices_scraper_YY_second_input prices_scraper_input" placeholder="Enter Second YY Product Url Here.">
+                    </div>
+                    <div class="prices_scraper_YY_button_div">
+                        <button class="prices_scraper_YY_button">Search Products</button>
+                    </div>                       
+                </form>    
+            </div>
+        </div>
+        {% if searched_items %}
+        <div class="prices_scraper_output">            
+            {% if searched_store %}
+                <div class="prices_scraper_output_up_div">                        
+                    {% for name, amound in searched_store.items() %}
+                    <p class="prices_scraper_output_best_store_text">It is best to buy stuff in this store:</p>
+                    <p class="prices_scraper_output_best_store_name">{{ name }}</p>
+                    <div class="prices_scraper_output_best_price_amound">
+                        <p class="prices_scraper_output_best_price_text">The Price is:</p>
+                        <p class="prices_scraper_output_best_price_value">{{ amound }}zł</p>                            
+                    </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="prices_scraper_output_up_div">
+                    Theres no stores with this items.
+                </div>
+            {% endif %}
+            <div class="prices_scraper_output_bottom_div">
+                <p class="links_for_items">Links:</p>                
+                {% for name, price in searched_items.items() %}
+                    <div class="prices_scraper_output_bottom_stuff">
+                        {% for item, link in url_to_item.items() %}
+                            {% if item == name %}  
+                                <p class="prices_scraper_output_bottom_stuff_name"><a href="{{ link }}"> {{ name }} </a></p><p class="prices_scraper_output_bottom_stuff_price">{{ price }}zł</p>
+                            {% endif %}
+                        {% endfor %}
+                    </div>                        
+                {% endfor %}
+            </div>                       
+        </div>
+    {% endif %}  
+    </div>
+</section>
+
+
+{% endblock %}

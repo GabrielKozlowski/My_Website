@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="user_profile_top" m-4>
+    <div class="user_profile_top_left">
+        <div class="user_profile_data">
+            <strong><b>Name: </b></strong>{{ user.name }}<br/>
+            <strong><b>Email: </b></strong>{{ user.email }}<br/>
+            <strong><b>Birth Date: </b></strong>{{ user.birth_date }}<br/>
+            <strong><b>City: </b></strong>{{ user.city }}<br/>
+            <strong><b>Date Join: </b></strong>{{ user.date_added.strftime('%d.%m.%Y') }}<br/>
+            {% if current_user.id == 9 %}
+            <strong><b>Set Default Avatar</b></strong> <a href="{{ url_for('admin_set_default_avatar', id=user.id) }}" class="set_default_avatar btn btn-sm btn-outline-secondary" >Set Default</a>
+            {% endif %}
+            
+            <hr class='hr_shadow my-3'>
+            <strong><samp class="user_profil_posts_text">Recent Posts :</samp></strong><br/><br/>
+        </div>
+        <div class="user_profile_posts">
+            {% for post in posts | reverse %}
+            {% if post.poster_id == user.id %}
+                <div class="user_profil_post shadow bg-body-tertiary rounded">
+                    <strong>Post name: </strong><a href="{{ url_for('post', id=post.id) }}">
+                        {% if post.title | length < 65 %} {{ post.title[:65] }}
+                        {% elif post.title | length > 65 and post.title | length < 130 %} {{ post.title[:65] }}-<br/> {{ post.title[65:130] }}
+                        {% elif post.title | length > 130 and post.title | length < 195 %} {{ post.title[:65] }}-<br/> {{ post.title[65:130] }}<br/> {{ post.title[130:195] }}
+                        {% else %} {{ post.title[:65] }}-<br/> {{ post.title[65:130] }}-<br/> {{ post.title[130:195] }}-<br/> {{ post.title[195:260] }}<br/>...
+                        {% endif %}
+                    </a><br/>
+                    <strong>Added:</strong> {{ post.date_posted.strftime('%d.%m.%Y') }}<br/>
+                    <strong>Content: </strong>
+                    {% if post.content | striptags | length < 68 %} {{ post.content[:68] | safe }}
+                    {% elif post.content | striptags | length > 68 and post.content | striptags | length < 133 %} {{ post.content[:68] | safe }}-<br/> {{ post.content[68:133] | safe }}
+                    {% elif post.content | striptags | length > 133 and post.content | striptags | length < 198 %} {{ post.content[:68] | safe }}-<br/> {{ post.content[68:133] | safe }}-<br/> {{ post.content[133:198] | safe }}
+                    {% else %}{{ post.content[:68] | safe }}-<br/> {{ post.content[68:133] | safe }}-<br/> {{ post.content[133:198] | safe }}-<br/>...
+                    {% endif %}  
+                </div>
+                <br/>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="user_profile_top_right">
+        <div class="user_profile_avatar">
+            {% if user.profil_picture %}
+                <img class="avatar_in_user" src="{{ url_for('static', filename='images/' + user.profil_picture) }}">
+            {% else %}
+                <img class="avatar_in_user" src="{{ url_for('static', filename='images/default_avatar.png') }}">
+            {% endif %}
+        </div>
+        
+        <div class="user_profile_about_me">
+            <strong><b>About Me: </b></strong><br/>
+            <samp class="user_profile_about_me_text">
+                {% if user.about_author %}
+                    {% if user.about_author | length < 35 %} {{ user.about_author[:35] }}
+                    {% elif user.about_author | length > 35 and user.about_author | length < 70 %} {{ user.about_author[:35] }}<br/>{{ user.about_author[35:70] }}
+                    {% elif user.about_author | length > 70 and user.about_author | length < 105 %} {{ user.about_author[:35] }}<br/>{{ user.about_author[35:70] }}<br/>{{ user.about_author[70:105] }}
+                    {% elif user.about_author | length > 105 and user.about_author | length < 140 %} {{ user.about_author[:35] }}<br/>{{ user.about_author[35:70] }}<br/>{{ user.about_author[70:105] }}<br/>{{ user.about_author[105:140] }}
+                    {% elif user.about_author | length > 140 and user.about_author | length < 175 %} {{ user.about_author[:35] }}-<br/>{{ user.about_author[35:70] }}-<br/>{{ user.about_author[70:105] }}-<br/>{{ user.about_author[105:140] }}-<br/>{{ user.about_author[140:175] }}
+                    {% elif user.about_author | length > 175 and user.about_author | length < 210 %} {{ user.about_author[:35] }}-<br/>{{ user.about_author[35:70] }}-<br/>{{ user.about_author[70:105] }}-<br/>{{ user.about_author[105:140] }}-<br/>{{ user.about_author[140:175] }}-<br/>{{ user.about_author[175:210] }}
+                    {% elif user.about_author | length > 210 and user.about_author | length < 245 %} {{ user.about_author[:35] }}-<br/>{{ user.about_author[35:70] }}-<br/>{{ user.about_author[70:105] }}-<br/>{{ user.about_author[105:140] }}-<br/>{{ user.about_author[140:175] }}-<br/>{{ user.about_author[175:210] }}-<br/>{{ user.about_author[210:245] }}
+                    {% elif user.about_author | length > 245 and user.about_author | length < 280 %} {{ user.about_author[:35] }}-<br/>{{ user.about_author[35:70] }}-<br/>{{ user.about_author[70:105] }}-<br/>{{ user.about_author[105:140] }}-<br/>{{ user.about_author[140:175] }}-<br/>{{ user.about_author[175:210] }}-<br/>{{ user.about_author[210:245] }}-<br/>{{ user.about_author[245:280] }}
+                    {% elif user.about_author | length > 280 and user.about_author | length < 315 %} {{ user.about_author[:35] }}-<br/>{{ user.about_author[35:70] }}-<br/>{{ user.about_author[70:105] }}-<br/>{{ user.about_author[105:140] }}-<br/>{{ user.about_author[140:175] }}-<br/>{{ user.about_author[175:210] }}-<br/>{{ user.about_author[210:245] }}-<br/>{{ user.about_author[245:280] }}-<br/>{{ user.about_author[280:315] }}
+                    {% else %} {{ user.about_author[:35] }}-<br/>{{ user.about_author[35:70] }}-<br/>{{ user.about_author[70:105] }}-<br/>{{ user.about_author[105:140] }}-<br/>{{ user.about_author[140:175] }}-<br/>{{ user.about_author[175:210] }}-<br/>{{ user.about_author[210:245] }}-<br/>{{ user.about_author[245:280] }}-<br/>{{ user.about_author[280:315] }}-<br/>{{ user.about_author[315:350] }}...
+                    {% endif %}
+                {% else %}
+                    Nothing abouth user
+                {% endif %}
+            </samp>
+        </div>
+        <br/>
+    </div>
+    
+</section>
+<section class="user_profile_bottom">
+    <div class="user_profile_comments">
+            <hr class='hr_shadow  my-3'>
+            <strong><b><samp class="user_profil_comment_text">Recent Comments: </samp></b></strong><br/><br/>
+            {% for comment in user.comment| reverse %}
+                {% if loop.index < 5 %}
+                <div class="user_profil_comments shadow bg-body-tertiary rounded">
+                    <strong>Comment:</strong> 
+                    {% if comment.content | length < 100 %}{{ comment.content[:100] }}<br/>
+                    {% elif comment.content | length > 100 and comment.content | length < 200 %}{{ comment.content[:100] }}-<br/> {{ comment.content[100:200] }}<br/>
+                    {% elif comment.content | length > 200 and comment.content | length < 300 %}{{ comment.content[:100] }}-<br/> {{ comment.content[100:200] }}-<br/> {{ comment.content[200:300] }}<br/>
+                    {% elif comment.content | length > 300 and comment.content | length < 400 %}{{ comment.content[:100] }}-<br/> {{ comment.content[100:200] }}-<br/> {{ comment.content[200:300] }}-<br/> {{ comment.content[300:400] }}<br/>
+                    {% else %}{{ comment.content[:100] }}-<br/> {{ comment.content[100:200] }}-<br/> {{ comment.content[200:300] }}-<br/>{{ comment.content[300:400] }}-<br/>{{ comment.content[400:500] }}-<br/>...<br/>
+                    {% endif %}
+                    <strong>In </strong><a href="{{ url_for('post', id=comment.post_id) }}">Post</a> <b>{{ comment.date_added.strftime('%d.%m.%Y %H:%M') }}</b><br/>
+                </div>
+                <br/>
+                {% endif %}
+            {% endfor %}
+        </div>
+</section>
+
+
+
+
+{% endblock %}

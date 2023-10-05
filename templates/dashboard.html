@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+{% for message in get_flashed_messages() %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+
+
+<h2>Dashboard</h2>
+<br/><br/>
+
+<div class="card">
+    <div class="card-header">
+        {{ current_user.name }}
+    </div>
+    <div class="card-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-8">
+
+              <strong>Name: </strong><a href="{{ url_for('user', id=current_user.id) }}">{{ current_user.name }}</a><br/>
+              <strong>Username: </strong>{{ current_user.username }}<br/>
+              {% if current_user.birth_date %}
+              <strong>Birth Date: </strong>{{ current_user.birth_date }}<br/>
+              {% endif %}              
+              <strong>User Id: </strong>{{ current_user.id }}<br/>
+              <strong>Email: </strong>{{ current_user.email }}<br/>
+              <strong>City: </strong>{{ current_user.city }}<br/>
+              <strong>Date Joined: </strong>{{ current_user.date_added.strftime('%d.%m.%Y %H:%M') }}<br/>
+              <strong>About Author:<br/> </strong>{{ current_user.about_author }}<br/>
+              <br/>
+              <a href="{{ url_for('logout') }}", class="btn btn-outline-secondary btn-sm">Logout</a>
+              <a href="{{ url_for('update', id=current_user.id)}}", class="btn btn-outline-primary btn-sm">Update Profile</a>
+              <a href="{{ url_for('confirm_delete', id=current_user.id)}}" class="dashboard_delete_btn btn btn-outline-danger btn-sm">Delete Profile</a>
+            </div>
+            <div class="col-4">
+              <div class="right_site_dashboard">
+                {% if current_user.profil_picture %}
+                  <img class="dashboard_avatar" src="{{ url_for('static', filename='images/' + current_user.profil_picture) }}">
+                {% else %}
+                  <img class="dashboard_avatar" src="{{ url_for('static', filename='images/default_avatar.png') }}">
+                {% endif %}
+                <a href="/default_avatar" class="btn btn-outline-secondary default_avatar">Default Avatar</a>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+    </div>   
+</div>
+<br/>
+<strong><samp class="user_profil_posts_text">User Posts:</samp></strong><br/>
+
+<div class="dashboard_user_posts">
+  {% for post in posts | reverse %}
+    {% if post.poster_id == current_user.id %}
+    <div class="user_profil_post shadow bg-body-tertiary rounded">
+      <strong>Post name: </strong><a href="{{ url_for('post', id=post.id) }}">
+          {% if post.title | length < 90 %} {{ post.title[:90] }}
+          {% else %} {{ post.title[:90] }}-<br/> {{ post.title[90:189] }}...
+          {% endif %}
+      </a><br/>
+      <strong>Content: </strong>
+      {% if post.content | length < 103 %} {{ post.content[:103] | safe }}
+      {% elif post.content | length > 103 and post.content | length < 203 %} {{ post.content[:103] | safe }}-<br/> {{ post.content[103:203] | safe }}
+      {% elif post.content | length > 203 and post.content | length < 303 %} {{ post.content[:103] | safe }}-<br/> {{ post.content[103:203] | safe }}-<br/> {{ post.content[203:303] | safe }}
+      {% else %}{{ post.content[:103] | safe }}-<br/> {{ post.content[103:203] | safe }}-<br/>{{ post.content[203:303] | safe }}-<br/> {{ post.content[303:403] | striptags }} ...
+      {% endif %}  
+    </div>
+    <br/>
+    {% endif %}  
+  {% endfor %}
+</div>
+
+
+<div class="dashboard_user_comments">
+  <div class="user_profile_comments">
+    <hr class='hr_shadow  my-3'>
+    <strong><b><samp class="user_profil_comment_text">Recent Comments: </samp></b></strong><br/><br/>
+    {% for comment in comments| reverse %}
+      {% if comment.poster_id == current_user.id %}  
+        <div class="user_profil_comments shadow bg-body-tertiary rounded">
+            <strong>Comment:</strong> 
+            {% if comment.content | length < 100 %}{{ comment.content[:100] }}<br/>
+            {% elif comment.content | length > 100 and comment.content | length < 200 %}{{ comment.content[:100] }}-<br/> {{ comment.content[100:200] }}<br/>
+            {% elif comment.content | length > 200 and comment.content | length < 300 %}{{ comment.content[:100] }}-<br/> {{ comment.content[100:200] }}-<br/> {{ comment.content[200:300] }}<br/>
+            {% elif comment.content | length > 300 and comment.content | length < 400 %}{{ comment.content[:100] }}-<br/> {{ comment.content[100:200] }}-<br/> {{ comment.content[200:300] }}-<br/> {{ comment.content[300:400] }}<br/>
+            {% else %}{{ comment.content[:100] }}-<br/> {{ comment.content[100:200] }}-<br/> {{ comment.content[200:300] }}-<br/>{{ comment.content[300:400] }}-<br/>{{ comment.content[400:500] }}-<br/>...<br/>
+            {% endif %}
+            <strong>In </strong><a href="{{ url_for('post', id=comment.post_id) }}">Post</a>
+        </div>
+        <br/>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <hr class='hr_shadow  my-3'>
+</div>
+
+
+<br/><br/>
+<div class="card">
+    <div class="card-header">
+        Update Profile
+    </div>
+    <div class="card-body">
+      <form action="/dashboard" method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+
+        {{ form.name.label(class="form-label") }}
+
+        {{ form.name(class="form-control", value=name_to_update.name) }}
+        <br/>
+
+        {{ form.username.label(class="form-label") }}
+
+        {{ form.username(class="form-control", value=name_to_update.username) }}
+        <br/>
+
+        {{ form.email.label(class="form-label") }}
+
+        {{ form.email(class="form-control", value=name_to_update.email) }}
+        <br/>
+        
+        {{ form.birth_date.label(class='form-label') }}
+
+        {{ form.birth_date(class='form-control', value=name_to_update.birth_date) }}
+        <br/>
+
+        {{ form.city.label(class="form-label")}}
+
+        {{ form.city(class="form-control", value=name_to_update.city) }}
+        <br/>
+
+        {{ form.about_author.label(class="form-label")}}
+
+        <textarea name="about_author" class="form-control">
+        {{ name_to_update.about_author }}
+        </textarea>
+        <br/>
+
+        {{ form.profil_picture.label(class="form-label")}}
+
+        {{ form.profil_picture(class="form-control", value=name_to_update.profil_picture) }}
+        <br/><br/>
+        
+        
+        {{ form.submit(class="btn btn-outline-success btn-sm") }}
+
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

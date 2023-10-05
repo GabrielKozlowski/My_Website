@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+
+
+<strong class="p-3"> Change Your Comment Here.</strong>
+<table class="table table-hover table-bordered table-striped">
+    <div class="edit_comment shadow bg-body-tertiary">
+        <samp>
+            Comment:
+        </samp>
+        {{ comment.content }}
+    </div>
+</table>
+
+
+<form class="edit_comment_input input-group" method="POST" action="/post/{{comment.post_id}}/edit_comment/{{ comment.id }}">
+    <input name="text_to_edit" id="text_to_edit" type="text_to_edit" class="form-control" value="{{ comment.content }}"/>
+    <button type="submit" class="btn btn-outline-success">Confirm Changes</button> 
+</form>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<div class="users">
+    {% for user in users | sort(attribute='id') %}
+    <p class="users_data">
+        <b>Id: [</b>{{ user.id }} <b>] Name: [</b>{{ user.name|capitalize }}<b>] Email: [</b>{{ user.email }}
+        <b>] City: [</b>{{ user.city|upper }}<b>] Username:</b> {{ user.username}} -- 
+        <a href="{{ url_for('user', id=user.id)}}" class="btn btn-outline-primary btn-vsm-50">Profile</a>    
+        {% if user.id != 9 %}
+            <a href="{{ url_for('confirm_delete', id=user.id)}}" class="btn btn-outline-danger btn-vsm-50">Delete</a>
+        {% endif %}
+        <br/><b>Avatar: </b>{{ user.profil_picture }}
+        <br/>
+        <hr class="my-1">        
+    </p>
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}

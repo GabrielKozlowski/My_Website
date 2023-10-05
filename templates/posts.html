@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+{% for message in get_flashed_messages() %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+    </div>
+{% endfor %}
+
+{% if current_user.is_authenticated %}
+<table class="table table-hover table-bordered table-striped">
+    <a href="{{ url_for('add_post') }}", class="btn btn-add-post btn-outline-success">Add Post</a>
+    <hr class="hr_shadow  mx-2">
+</table>
+{% endif %}
+
+
+{% for post in posts | reverse %}
+<table class="table table-hover table-bordered table-striped">
+    <div class="posts_site shadow bg-body-tertiary">
+        <div class="posts_left_site">
+            <h2 class="post_title_in_posts"><a href="{{ url_for('post', id=post.id) }}">
+                {% if post.title | length < 40 %} {{ post.title[:40] }}
+                {% elif post.title | length > 40 and post.title | length < 80 %} {{ post.title[:40] }}<br/> {{ post.title[40:80] }}
+                {% else %} {{ post.title[:40] }}<br/> {{ post.title[40:80] }}<br/> {{ post.title[80:120] }}
+                {% endif %}
+            </a></h2>
+            <strong>By: </strong><a href="{{ url_for('user', id=post.poster.id) }}">{{ post.poster.name }}</a><br/>
+            <strong>Slug: </strong>{{ post.slug[:75] }}<br/>
+            <strong>Date: </strong>{{ post.date_posted.strftime('%Y-%m-%d %H:%M:%S') }}<br/><br/>
+            <strong>Content:  </strong>
+            {% if post.content | length < 83 %} {{ post.content[:83] | safe }}
+            {% elif post.content | length > 83 and post.content | length < 163 %} {{ post.content[:83] | safe }}-<br/> {{ post.content[83:163] | safe }}
+            {% elif post.content | length > 163 and post.content | length < 243 %} {{ post.content[:83] | safe }}-<br/> {{ post.content[83:163] | safe }}-<br/> {{ post.content[163:243] | safe }}
+            {% elif post.content | length > 243 and post.content | length < 323 %} {{ post.content[:83] | safe }}-<br/> {{ post.content[83:163] | safe }}-<br/> {{ post.content[163:243] | safe }}-<br/>{{ post.content[243:323] | safe }}
+            {% else %}{{ post.content[:83] | safe }}-<br/> {{ post.content[83:163] | safe }}-<br/> {{ post.content[163:243] | safe }}-<br/>{{ post.content[243:323] | safe }}-<br/>{{ post.content[323:403] | safe }}...
+            {% endif %} 
+            <br/>
+
+            <a href="{{ url_for('post', id=post.id) }}", class="btn btn-outline-success btn-sm">Viev Post</a>
+
+            {% if current_user.id == 9 or current_user.id == post.poster_id %}
+            <a href="{{ url_for('edit_post', id=post.id) }}", class="btn btn-outline-primary btn-sm">Edit Post</a>
+            <a href="{{ url_for('delete_post', id=post.id) }}", class="btn btn-outline-danger btn-sm">Delete Post</a>
+            {% endif %}
+            <br/>
+        </div>
+        <div class="posts_right_site">
+            {% if post.poster.profil_picture %}
+                <img class="posts_avatar" src="{{ url_for('static', filename='images/' + post.poster.profil_picture) }}">
+            {% else %}
+                <img class="posts_avatar" src="{{ url_for('static', filename='images/default_avatar.png') }}">
+            {% endif %}
+        </div>
+    </div>
+</table>
+{% endfor %}
+
+{% if current_user.is_authenticated and posts|list|length > 0 %}
+
+<table class="posts_table table table-hover table-bordered table-striped">
+    <a href="{{ url_for('add_post') }}", class="btn btn-add-post mt-3  btn-outline-success">Add Post</a>
+</table>
+
+{% endif %}
+
+{% endblock %}

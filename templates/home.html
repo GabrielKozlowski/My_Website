@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+
+{% if current_user.is_authenticated %}
+<section class="section_home_upper">
+    <div class="container_home_left">
+        <h1 class="title_home">
+            I am very pleased that you have created an account on my site. 
+            This is a page that will tell you a bit about me and my skills. 
+            I will be adding new features to the site over time. 
+            Now make yourself comfortable here.
+        </h1>
+        <a href="{{ url_for('user', id=9) }}" class="my_profile_btn_home">My Profile</a>
+    </div>
+    <div class="container_home_right">
+        <img src="/static/images/welcome.jpg" alt="Image" class="home_main_foto">
+    </div>
+</section>
+
+
+
+<section class="section_home_chat">
+    <div class="chat_box">
+        <div class="chat_messeges">
+            {% for message in chat_messages | reverse %}
+                {% if loop.index < 40 %}
+                    <div class="chat_view">
+                        <li></li>
+                        <div>
+                            {% if current_user.id == 9 %}
+                            <a href="{{ url_for('delete_chat_message', id=message.id ) }}" class="delete_chat_message btn btn-outline-danger">Del</a>
+                            {% endif %}
+                            {{ message.date_added.strftime('%d.%m %H:%M') }}| <b> {{ message.poster.name }}</b>:
+                            {% if message.content %}
+                                {% if message.content | length < 50 %} {{ message.content[:50] }}
+                                {% else %} {{ message.content[:50] }}-<br/>{{ message.content[50:100] }}
+                                {% endif %}
+                            {% else %}
+                                {{ message.content }}
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <form class="chat_typing" method="POST" action="/">
+            <p class="author_of_chat_message">Author: <b>{{ current_user.name }}</b><br/></p>
+            <input name="chat_message" class="chat_adding_message" type="text" placeholder="Enter message. max 100" maxlength="100"><br/>
+            <button href="{{ url_for('home') }}" class="chat_button btn btn-sm btn-outline-success" type="submit">Send</button>
+        </form>
+    </div> 
+</section>
+
+
+{% else %}
+<section class="section_home_upper ">
+    <div class="container_home_left_else">
+        <img src="/static/images/please_singup.jpg" alt="Image" class="home_singup_foto ">
+        <a href="/user/add" class="singup_home singup_home_on_foto">SingUP</a>
+        <a href="/login" class="login_home login_home_on_foto">Login</a>        
+    </div>    
+    <div class="container_home_right_else">
+        <h1 class="title_home_else">
+            <samp class="welcome_text_after_login">I am <Samp class="my_name_after_login">Gabriel Kozłowski</Samp> and welcome on my website! </samp><a href="/user/add" class="singup_home">SingUP</a><samp class="welcome_text_after_login"> and </samp><a href="/login" class="login_home">Login</a><samp class="welcome_text_after_login"> for more content.</samp>
+        </h1>
+        <p class="info_after_login">After That You Can Add Post, Comment, Use Currency Exchange And More.</p>
+    </div>
+</section>
+<section class="section_home_bottom mt-3">
+    Here You See More After Login
+</section>
+
+
+{% endif %}
+
+
+
+{% endblock %}

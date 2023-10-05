@@ -1,0 +1,119 @@
+
+
+<section class="section_weather">
+    <div class="container_weather">
+        <div class="box">
+            <form class="weather_media" id="weather_media" method="POST">
+                {% if current_user.is_authenticated %}
+                <div class="media_weather">
+                    <div class="media-content">
+                        <div class="content_weather">
+                            <span class="title_weather">{{ weather.city|capitalize }}</span>
+                            <br/>
+                            <spam class="subtitle_weather">{{ weather.temperature }}°C</spam>
+                            <br/>     
+                        </div>
+                    </div>                    
+                    <div class="media-left">
+                        <figure class="image">
+                            <img class="image_icon" src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
+                        </figure> 
+                    </div>
+                </div>
+                <div class="media_bottom">
+                   <span class="description_weather">{{ weather.description|capitalize }}</span> 
+                   <button id="more_info_weather_right_site" type="button" class="more_info_weather_right_site btn btn-outline-primary btn-sm" style="display: block;">More Info</button>
+                   <button id="less_info_weather_right_site" type="button" class="less_info_weather_right_site btn btn-outline-primary btn-sm" style="display: none;">Less Info</button>
+                </div>
+                <div class="media_more_info" id="media_more_info" style="display: none;">
+                    <span class="pressure_weather">Pressure: <b>{{ weather.pressure }}</b> hPa</span>
+                    <br/>
+                    <spam class="feels_like_weather">Feels Like: <b>{{ weather.feels_like }}</b>°C</spam> 
+                    <br/>
+                    <span class="min_temp_weather">Min: <b>{{ weather.min_temp }}</b>°C</span>
+                    <br/>
+                    <spam class="max_temp_weather">Max: <b>{{ weather.max_temp }}</b>°C</spam> 
+                    <br/>
+                    <spam class="wind_speed_weather">Wind: <b>{{ weather.wind_speed * 3.6 | round }}</b> Km/h</spam> 
+                </div>
+                {% else %}
+                <div class="mx-1">
+                    Weather informations
+                    <button class="btn btn-sm btn-outline-success mx-4">Login First</button>
+                </div>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="section_post">
+    <div class="container_post">
+        <form class="last_post_right_site" method="POST">
+            {% if current_user.is_authenticated %}
+            {% for post in posts %}
+                {% if loop.last %}
+                    <a href="{{ url_for('post', id=post.id) }}"><strong class="last_post_right_site_text"><b>Last Post</b></strong></a><br/>
+                    <strong><b>By: </b></strong><a href="{{ url_for('user', id=post.poster.id) }}">{{ post.poster.name[:20] }}</a><br/>
+                    <strong><b>Title: </b></strong>{{ post.title[:15] | capitalize }}...<br/>
+                    <strong><b>Added: </b></strong>{{ post.date_posted.strftime('%d.%m.%Y') }}<br/>
+                    <strong><b>Content: </b></strong><br/>
+                    <samp class="last_post_right_site_content">
+                        {% for word in post.content.split(' ') %}
+                            {% if loop.index <= 20 %}
+                                {% if word | striptags| length > 20 %}
+                                    {{ word[:20] | safe }}<br/>
+                                    {{ word[20:40] | safe }}
+                                {% elif loop.index == 20 %}
+                                    ...
+                                {% else %}
+                                    {{ word | safe }}
+                                {% endif %}
+                            {% endif %}                            
+                        {% endfor %}                        
+                    </samp>
+                {% endif %}
+            {% endfor %}
+            {% else %}
+            <a href="#"><strong class="last_post_right_site_text"><b>Last Post</b></strong></a><br/>
+            <button class="btn btn-sm btn-outline-success">Login First</button>
+            {% endif %}
+        </form>            
+    </div>
+</section>
+
+<section class="section_comments">
+    <div class="container_comments">
+        <form class="last_3_comments_right_site" method="POST">
+            <h5 class="last_comments_right_site_h5 px-2">Last 3 comments</h5>
+            <hr>
+            {% if current_user.is_authenticated %}
+            {% for comment in comments | reverse %}
+                {% if loop.index <= 3 %}
+                    <strong><b>By: </b></strong><a href="{{ url_for('user', id=comment.poster_id) }}">{{ comment.poster.name }}</a><br/> 
+                    <b>{{ comment.date_added.strftime('%d.%m.%Y') }}</b><br/>
+                    <strong><b>Comment <a href="{{url_for('post', id=comment.post_id )}}">In Post</a> :<br/></b></strong>
+                    <samp class="last_comments_right_site_content">
+                        {% if comment.content | length < 18 %}{{ comment.content[:18] }}
+                        {% elif comment.content | length > 18 and comment.content | length < 36 %}{{ comment.content[:18] }}-<br/>{{ comment.content[18:36] }}
+                        {% else %}{{ comment.content[:18] }}-<br/>{{ comment.content[18:36] }}-<br/>{{ comment.content[36:51] }}...
+                        {% endif %}
+                    </samp>
+
+                    <hr>
+                {% endif %}            
+            {% endfor %}
+            {% else %}
+            <button class="btn btn-sm btn-outline-success">Login First</button>
+            {% endif %}
+        </form>
+    </div>
+</section>
+
+
+
+
+
+
+
+

@@ -1,0 +1,3202 @@
+
+:root {
+    --color-1: #186cb8;
+    --color-2: #079305;
+    --color-3: #f1b211;
+    --color-4: #19e9e9;
+    --color-5: #f9002f;
+    --color-warm-white: rgb(244, 237, 225);
+  }
+
+head 
+{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.navbar
+{
+    height: 3.5em;
+}
+
+.navbar-nav
+{
+    margin-bottom: 0 !important;
+}
+
+.btn-navbar
+{
+    background-color: #198754;
+    color: white;
+}
+
+.navbar-brand,
+.nav-link
+{
+    color: white;
+    background-color: rgb(33, 37, 41);
+    background-size: 50%;
+    padding-left: .8rem;
+}
+
+.form-control
+{
+    margin-right: 0;
+}
+
+
+.text_login_in_login_page,
+.text_registration_in_adduser_page
+{
+    color: #24d924;
+    padding: 1rem;
+}
+
+.head-container 
+{
+    display: block;
+}
+
+/* .left-container
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    background-color: grey;
+} */
+
+.left-container
+{
+    display: grid;
+    grid-template-areas:
+        "currency programs"
+        "games programs";
+    grid-template-columns: 1fr 1fr;
+    background-color: grey;
+}
+
+
+
+
+
+
+.middle-container
+{
+    width: 100%;
+    background-color: grey;
+}
+
+.right-container
+{
+    display: grid;
+    /* grid-template-columns: 50% 50%; */
+    grid-template-areas:
+        "w p"
+        "c c";
+
+    width: 100%;
+    height: auto;
+    background-color: grey;
+    padding-top: 1rem;
+}
+
+.section_weather
+{
+    grid-area: w;
+}
+
+.section_post
+{
+    grid-area: p;
+}
+
+.section_comments
+{
+    grid-area: c;
+}
+
+.author_space
+{
+    width: 100%;
+}
+
+.hr_shadow 
+{
+    visibility: hidden;
+    color: rgb(144, 143, 143);
+	margin: 0;
+	box-shadow: 0 0px 3px 3px #a69d9d;
+}
+
+
+.weather_media
+{
+    width: 11.5rem;
+    border: none;
+    border-radius: 22%;
+    padding: 0.5pc 1pc;
+    background-image: linear-gradient(rgb(218, 248, 248),skyblue);
+}
+
+
+
+.media_weather
+{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.media_bottom
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: -5px 0 5px 0;
+}
+
+.section_home_upper
+{
+    display: block;
+}
+
+.image_icon
+{
+    width: 100%;
+}
+
+.title_weather
+{
+    width: 100%;
+}
+
+.post_title_in_post
+{
+    font-size: 1.2rem;
+}
+
+.post_avatar
+{
+    width: 75px;
+    height: auto;
+}
+
+.post_about_author
+{
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    border: solid rgb(215, 213, 213) 1px;
+}
+
+.post_about_author_info
+{
+    margin: .5pc .5pc 0 1pc;
+}
+
+.post_about_author_poster_name
+{
+    font-size: .8rem;
+}
+
+
+.post_about_author_info_content
+{
+    margin-top: 0.5pc;
+    font-size: .8rem;
+}
+
+.back_to_post_btn
+{
+    color: grey;
+    background-color: white;
+    margin: 0 0 1rem 1rem;
+}
+
+.back_to_post_btn:hover
+{
+    color: white;
+    background-color: grey;
+}
+
+
+.comment_form_in_post
+{
+    margin-left: 5%;
+    width: 90%;
+    padding-bottom: 1rem;
+}
+
+.comment_in_post
+{
+    padding: 1rem;
+    margin: 0 0 1rem 5%;
+    width: 90%;
+}
+
+.comment-group
+{
+    display: flex;
+}
+
+.comment-content,
+.comment-info
+{
+    margin-left: 1pc;
+}
+
+.btn-vsm-40
+{
+    height: 16px;
+    width: 40px;
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    margin-left: 2pc;
+}
+
+.btn-vsm-50
+{
+    height: 16px;
+    width: 50px;
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+}
+
+.last_post_right_site
+{
+    width: 11.5rem;
+    border: none;
+    border-radius: 5%;
+    margin-left: auto;
+    padding: 0.5pc;
+    background-image: linear-gradient(rgb(187, 184, 246),rgb(90, 80, 125));    
+}
+
+.last_post_right_site_text
+{
+    font-size: 1.2pc;
+}
+
+.last_post_right_site_content
+{
+    color: #e2e25c;
+}
+
+
+.last_comments_right_site_h5
+{
+    color: #936805;
+    text-align: center;
+}
+
+.last_3_comments_right_site
+{
+    border: solid 2px;
+    border-color: rgb(44, 77, 6);
+    margin: .5pc 1pc;
+    padding: 0.5pc;
+    background-image: linear-gradient(rgb(191, 249, 55),rgb(89, 196, 18));  
+}
+
+.last_comments_right_site_content
+{
+    color: #936805;
+    font-size: 1pc;
+    font-weight: bold;
+}
+
+.container_currency_converter
+{
+    border: none;
+    border-radius: 0 0 5% 5%;
+    padding: 0.5pc 0 0.5pc 1pc;
+    background-image: linear-gradient(rgba(151, 72, 2, 0.614),rgba(46, 29, 12, 0.614));  
+}
+
+
+.container_programs
+{
+    border: solid 3px;
+    border-radius: 0 0 10% 10%;
+    border-color: #FFEB3B;
+    text-align: center;
+
+    background: conic-gradient(at center center, 
+    #FFEB3B 5%, transparent 5%,transparent 5%, #9E9E9E 5%, 
+    #9E9E9E 10%, transparent 10%,transparent 10%, #FFEB3B 10%,
+    #FFEB3B 15% , transparent 15%,transparent 15%, #9E9E9E 15%, 
+    #9E9E9E 20%, transparent 20%, transparent 20%, #FFEB3B 20%,
+    #FFEB3B 25% , transparent 25%,transparent 25%, #9E9E9E 25%, 
+    #9E9E9E 30%, transparent 30%,transparent 30%, #FFEB3B 30%,
+    #FFEB3B 35% , transparent 35%,transparent 35%, #9E9E9E 35%, 
+    #9E9E9E 40%, transparent 40%, transparent 40%, #FFEB3B 40%,
+    #FFEB3B 45% , transparent 45%,transparent 45%, #9E9E9E 45%,
+    #9E9E9E 50%, transparent 50%,transparent 50%, #FFEB3B 50%,
+    #FFEB3B 55% , transparent 55%,transparent 55%, #9E9E9E 55%, 
+    #9E9E9E 60%, transparent 60%, transparent 60%, #FFEB3B 60%,
+    #FFEB3B 65% , transparent 65%,transparent 65%, #9E9E9E 65%, 
+    #9E9E9E 70%, transparent 70%,transparent 70%, #FFEB3B 70%,
+    #FFEB3B 75% , transparent 75%,transparent 75%, #9E9E9E 75%, 
+    #9E9E9E 80%, transparent 80%, transparent 80%, #FFEB3B 80%,
+    #FFEB3B 85% , transparent 85%,transparent 85%, #9E9E9E 85%,
+    #9E9E9E 90%, transparent 90%,transparent 90%, #FFEB3B 90%,
+    #FFEB3B 95% , transparent 95%,transparent 95%, #9E9E9E 95%, 
+    #9E9E9E 100%, transparent 100%, transparent 100%, #FFEB3B 100%
+    
+    ), 
+    transparent 100%;
+}
+
+.text_programs
+{
+    font-size: 2rem;
+    font-weight: bold;
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: rgb(0, 255, 255);
+}
+
+.programs_container_left_site
+{
+    width: auto;
+    border: none;
+    background-color:#e0ce33;
+    border-radius: 10px;
+    margin: 1pc;
+}
+
+.text_time_since_birth
+{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.programs_button_open,
+.games_button_play
+{
+    height: 20px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+}
+
+.name_program_left_site
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.text_calculator
+{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.text_vat_calculator
+{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.text_yt_downloader
+{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.input_from,
+.input_amound,
+.input_to,
+.btn-convert
+{
+    color: white;
+    width: 90%;
+    height: 1.6pc;
+    margin-bottom: 0.3pc;
+    font-size: 0.8pc;
+    background-color: rgba(90, 42, 1, 0.614);
+    border: solid 1px;
+    border-color: rgb(117, 75, 47);
+}
+
+.posts_site
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.post_title_in_posts
+{
+    font-size: 1.4rem;
+}
+
+.posts_avatar
+{
+    width: 100px;
+    height: auto;
+    float: right;
+}
+
+.posts_table
+{
+    margin-bottom: 0rem;
+}
+
+.btn-add-post
+{
+    margin: 1rem 0 1rem 0.5rem;
+}
+
+.edit_comment
+{
+    width: 90%;
+    padding: 0;
+    margin: 1rem 0 0 5%;
+}
+
+.edit_comment_input
+{
+    width: 90%;
+    margin: 0 0 0 5%;
+    padding: 0 0 1rem 0;
+}
+
+.dashboard_avatar
+{
+    width: 100px;
+    float: right;
+}
+
+.exchange_info
+{
+    margin-top: 1rem;
+    margin-bottom: 0px;
+    color: white;
+    font-size: 0.7rem;
+}
+
+.section_currency_converter
+{
+    min-width: 50%;
+    grid-area: currency;
+}
+
+.currency_converter_name
+{
+    color: white;
+    font-weight: bold;
+}
+
+.currency_converter_submit_button
+{
+    width: 100%;
+    padding: 0.2pc;
+    margin: 0;
+    font-size: 0.75pc;
+}
+
+.currency_converter_submit_button_left_site
+{
+    width: 35% !important;
+}
+
+
+.currency_converter_more_options_button
+{
+    width: 55%;
+    padding: 0.2pc;
+    margin: 0;
+    font-size: 0.75pc;
+}
+
+
+
+/* Home Center Container Css Staff After Login */
+.container_home_left
+{
+    width: 100%;
+}
+
+.left_site_programs
+{
+    margin: 0;
+    margin-left: 0.5rem;
+    min-width: 45%;
+    grid-area: programs;
+}
+
+
+.left_site_games
+{
+    margin: 0;
+    margin-top: 0.5rem;
+    min-width: 50%;
+    grid-area: games;
+}
+
+
+.converters_of_currency
+{
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    background-color: rgba(90, 42, 1, 0.614);
+    height: 17rem;
+}
+
+.currency_converter_buttons
+{
+    display: grid;
+    width: 40%;
+}
+
+
+.currency_converter_stuff
+{
+    justify-content: center;
+    width: 60%;
+    height: auto;
+    margin: 2pc;
+}
+
+
+.currency_p
+{
+    margin: 0 0 0.2pc 0;
+    padding: 0;
+    font-size: 0.8pc;
+    color: rgb(244, 237, 225);
+}
+
+.currency_converter_in_date_stuff
+{
+    width: 60%;
+    height: auto;
+    margin: 0 0 0 0;
+}
+
+.currency_converter_in_date_stuff_top
+{
+    display: block;
+    margin: 1pc 1pc 0 0;
+}
+
+.currency_converter_in_date_stuff_top_left,
+.currency_converter_in_date_stuff_top_right
+{
+    display: block;
+    width: 100%;
+}
+
+.currency_converter_in_date_stuff_bottom
+{
+    display: block;
+    width: 60%;
+    height: auto;
+    margin-left: 30%;
+}
+
+.currency_converter_list_names
+{
+    display: flex;
+    width: 60%;
+    height: auto;
+    justify-content: center;
+    margin: 2pc;
+    align-items: center;
+}
+
+.currency_converter_show_list_names_button,
+.currency_converter_hide_list_names_button
+{
+    width: 65%;
+    height: 50%;
+    font-size: 1.5pc;
+    border-radius: 20px;
+}
+
+.currency_list
+{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    font-size: 0.75pc;
+    margin: 0.2pc;
+}
+
+.currency_list_code
+{
+    display: contents;
+    color: #fccb58;
+}
+
+.currency_list_name
+{
+    display: contents;
+    color: rgb(244, 237, 225)
+}
+
+
+
+.list_of_currency_list
+{
+    margin-left: 0;
+}
+
+.currency_title_button
+{
+    position: relative;
+    margin: 1pc;
+    font-size: .8pc;
+    width: 5.5rem;
+    height: 3.5rem;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    background-color: #936805;
+    border: 1px solid #936805;
+    border-radius: 20px;
+}
+
+.currency_title_button:hover
+{
+    animation: animate 2s linear infinite; 
+}
+
+
+.currency_title_button:before
+{
+    position: absolute;
+    content: "";
+    left: -4px;
+    top: -4px;
+    background: linear-gradient(45deg, #f96800, #fbff00, #f96800, #fbff00, #f96800, #fbff00, #f96800, #fbff00, #f96800, #fbff00);
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    z-index: -1;
+    border-radius: 20px;
+    filter: blur(10px);
+    opacity: 0;
+    transition: .3s;
+    background-size: 400%;
+
+}
+
+.currency_title_button:hover:before
+{
+    animation: glow 22s linear infinite;
+    opacity: 1;
+}
+
+@keyframes animate
+{
+    0%
+    {
+        color: white;
+        text-shadow: none;
+    }
+    50%
+    {
+        color: #832503;
+        text-shadow: 0 0 10px rgb(242, 239, 49);
+    }
+    100%
+    {
+        color: white;
+        text-shadow: none;
+    }
+}
+
+@keyframes glow 
+{
+    0%
+    {
+        background-position: 0 0;
+    }
+    50%
+    {
+        background-position: 400% 0;
+    }
+    100%
+    {
+        background-position: 0 0;
+    }
+}
+
+.currency_converter_output
+{
+    width: 100%;
+    height: auto;
+    border-top: 10px dotted rgb(130, 86, 6);
+    background-color: rgba(90, 42, 1, 0.614);
+}
+
+.currency_converter_output_text
+{
+    color: aqua;
+    font-size: 0.9rem;
+}
+
+.changes_outputs_from
+{
+    margin: 1pc;
+    text-align: center;
+}
+
+.changes_outputs_value
+{
+    display: grid;
+    grid-template-columns: 20% 30% 20% 30%;
+    text-align: center;
+    font-size: 2pc;
+    align-items: baseline;
+}
+
+.changes_outputs_value_one
+{
+    display: grid;
+    text-align: center;
+    font-size: 2pc;  
+}
+
+.download_data
+{
+    display: flex;
+    justify-content: center;
+    color: #a8f154;
+    margin: 0;
+}
+
+.download_currency_data
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+}
+
+.get_currency_data_button
+{
+    margin: 1rem;
+    color: black;
+    background-color: #24d924;
+    border: 2px solid goldenrod;
+    border-radius: 0.5rem;
+    width: 4rem;
+    height: 1.4rem;
+    font-size: .8rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.changes_from_p_name
+{
+    font-size: 2pc;
+    color: rgb(244, 237, 225);
+    padding: -5px 0 0 0;
+}
+
+.changes_output_from_value
+{
+    width: 30% !important; 
+    margin: 0 0 0 35% !important;
+}
+
+.changes_from_p_value
+{
+    font-size: 2pc;
+    color: var(--color-warm-white);
+    border: dashed 4px #aa8d2a;
+    border-radius: 30px;
+    background-color: #844e09;
+    margin: 0 0 10px 0%;
+    padding: 0;
+    width: 100%;    
+}
+
+.changes_from_p_name_one
+{
+    font-size: 2pc;
+    color: rgb(244, 237, 225);
+}
+
+.changes_from_p_value_one
+{
+    font-size: 2pc;
+    color: var(--color-warm-white);
+    border: dashed 4px #aa8d2a;
+    border-radius: 30px;
+    background-color: #844e09;
+    padding: 0;
+    width: 20%; 
+    margin-left: 40%;   
+}
+
+
+
+.changes_outputs_equal
+{
+    font-size: 3pc;
+    color: var(--color-warm-white);
+    margin: 0;
+    padding: 0;
+}
+
+.changes_outputs_to
+{
+    font-size: 2.2pc;
+    color: rgb(82, 45, 45);
+    margin: 0;
+    padding: 2% 0 0 0;
+}
+
+
+.date_changes_outputs_from
+{
+    text-align: center;
+    margin: 1pc;
+}
+.date_changes_value
+{
+    border: solid silver;
+    border-width: 0 4px 4px 0;
+}
+
+.date_changes_date
+{
+    text-align: center;
+    font-size: 1.5pc;
+    color: #19e9e9;
+    border-bottom: dashed 2px silver;
+}
+
+.date_changes_output_columns
+{
+    display: block;
+    border: solid silver;
+    border-width: 4px 0 0 4px;
+}
+
+.date_changes_output_stuff
+{
+    display: flex;
+    align-items: center;
+    margin-left: .5pc;
+}
+
+.date_changes_name
+{
+    text-align: center;
+    border: solid 2px silver;
+    border-radius: 50%;
+    width: 20%;
+    margin: 0 5% 1pc 2%;
+    font-size: 1.4pc;
+    color: rgb(78, 58, 58);
+    background-color: var(--color-warm-white);
+}
+
+.date_changes_name_from
+{
+    text-align: center;
+    border: solid 2px silver;
+    border-radius: 50%;
+    width: 20%;
+    margin: 0 5% 1pc 2%;
+    font-size: 1.4pc;
+    color: var(--color-warm-white);
+    background-color: rgb(135 98 35);
+}
+
+.date_changes_equal_sign
+{
+    margin-right: 1pc;
+    font-size: 2pc;
+    font-weight: bold;
+    color: #b9b3a8
+}
+
+
+
+.date_changes_output_amound
+{
+    font-size: 2pc;
+    font-weight: bold;
+    color: white;
+}
+
+
+.date_changes_amound
+{
+    font-size: 2pc;
+    font-weight: bold;
+    color: white;
+    margin-left: 1pc;
+    min-width: 7pc;
+}
+
+.date_changes_from_p_name
+{
+    font-size: 2pc;
+    color: rgb(244, 237, 225);
+    margin: 0;
+    padding: -5px 0 0 0;
+}
+
+.date_changes_from_p_value
+{
+    font-size: 2pc;
+    color: var(--color-warm-white);
+    border: solid 2px silver;
+    border-radius: 50%;
+    background-color: rgb(135 98 35);
+    margin: 2% 30% 2% 30%;
+    padding: 0;
+    width: 40%; 
+}
+
+
+
+
+.title_home
+{
+    width: 100%;
+    height: auto;
+    font-size: 1.1pc;
+    padding: .3rem;
+    margin: 0;
+    background: conic-gradient(at center center,  
+      var(--color-1) 23%, 
+      transparent 23%,transparent 23%, 
+      var(--color-2) 23%, var(--color-2)  40%,
+      transparent 40%,transparent 40%, 
+      var(--color-3) 40%,var(--color-3) 70% ,
+      transparent 70%,transparent 70%, 
+      var(--color-4) 70%, var(--color-4) 77%,
+      transparent 77%, transparent 77%, 
+      var(--color-5) 77%),
+      transparent 99%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.my_profile_btn_home
+{
+    position: absolute;
+    font-size: .6pc;
+    font-weight: bold;
+    border: solid 1px;
+    border-color: #19e9e9;
+    border-radius: 5px;
+    background: linear-gradient(160deg, red 0% 10%,blue 10% 20%, green 20% 30%,red 30% 40%,blue 40% 50%, green 50% 60%,red 70% 80%,blue 80% 90%, green 90% 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.my_profile_btn_home:hover
+{
+    border-color: blue;
+    background: linear-gradient(rgb(2, 196, 2), rgb(0, 102, 255));
+    color: white;
+}
+
+
+
+.container_home_right
+{
+    width: 100%;
+}
+
+.home_main_foto
+{
+    width: 100%;
+    height: auto;
+}
+
+
+
+/* Home Center Container Css Staff Befor Login */
+.container_home_left_else
+{
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.home_singup_foto
+{
+    width: 100%;
+    height: auto;
+}
+
+.container_home_right_else
+{
+    width: 100%;
+}
+
+.title_home_else
+{
+    width: 100%;
+    height: auto;
+    padding-left: 1pc;
+    font-size: 1.5pc;
+}
+
+.welcome_text_after_login
+{
+    background: linear-gradient(to right, rgb(198, 9, 116), rgb(75, 2, 92));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.my_name_after_login
+{
+    color: rgb(49, 196, 41);
+    font-family:'Courier New', Courier, monospace;
+}
+
+.singup_home
+{
+    color: aqua;
+    font-style: italic;
+    text-decoration: none;
+    background: linear-gradient(180deg, rgb(0 8 255), #03ffff, rgb(0 8 255));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;    
+}
+
+.login_home
+{
+    color: aqua;
+    font-style: italic;
+    text-decoration: none;
+    background: linear-gradient(90deg, rgb(51, 255, 0), rgb(21, 105, 0), rgb(51, 255, 0), rgb(21, 105, 0), rgb(51, 255, 0));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.singup_home_on_foto
+{
+    position: absolute;
+    left: 2%;
+    font-size: 1.5rem;
+    top: 2%;
+}
+
+.login_home_on_foto
+{
+    position: absolute;
+    left: 4%;
+    top: 12%;
+    font-size: 1.5rem;
+}
+
+
+
+
+
+.info_after_login
+{
+    height: auto;
+    font-size: 1pc;
+    color: rgb(13, 127, 5);
+    margin: 1pc;
+}
+
+.section_home_bottom
+{
+    margin: 0 !important;
+    text-align: center;
+    background: linear-gradient(120deg, red 20%, rgb(240, 236, 12) 40%,
+                                        rgb(85, 227, 255) 46% 60%, rgb(240, 236, 12) 64%,
+                                        red 80%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.users
+{
+    font-size: .7rem;
+    color: #8BC34A;
+    padding: 1rem;
+}
+
+.set_default_avatar
+{
+    background-color: #621e1e;
+    color: #55eaed;
+}
+
+.set_default_avatar:hover
+{
+    background-color: #fff;
+    color: #621e1e;
+}
+
+.user_profile_top
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0 0 0;
+}
+
+.user_profile_top_left
+{
+    width: 65%;
+}
+
+.user_profile_top_right
+{
+    width: 35%;
+    display: block;
+}
+
+.user_profil_post
+{
+    width: 90%;
+    font-size: .8rem;
+    padding: 1pc;
+    padding-bottom: 0px;
+    margin: 0 0 0 5%;
+    border: solid 4px;
+    border-radius: 1pc;
+    border-color: rgba(106, 81, 221, 0.484);
+}
+
+.user_profil_comments
+{
+    width: 90%;
+    border: solid 1px;
+    border-radius: 1pc;
+    border-color: rgba(155, 249, 88, 0.721);
+    padding: .5pc;
+    margin: 0 0 0 5%;
+}
+
+.user_profil_posts_text
+{
+    color:rgb(76 40 243 / 48%);
+    margin: 0 0 0 5%;
+}
+
+.user_profil_comment_text
+{
+    color: rgb(145 255 66 / 48%);
+    margin: 0 0 0 5%;
+}
+
+.user_profile_data
+{
+    font-size: 1.2pc;
+}
+
+.user_profile_avatar
+{
+    padding-left: 0;
+}
+
+.user_profile_about_me
+{
+    font-size: .8pc;
+}
+
+.user_profile_about_me_text
+{
+    background: linear-gradient(rgb(0 196 220), rgb(137 255 0));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: .8pc;
+}
+
+.avatar_in_user
+{
+    width: 115px;
+    float: left;
+}
+
+
+.default_avatar
+{
+    font-size: 0.6rem;
+    margin-left: 0;
+    height: auto;
+    width: 84%;
+    padding: 0;
+    margin-top: -3px;
+    border-radius: 0 0 10px 10px;
+}
+
+.dashboard_delete_btn
+{
+    margin: .4rem 0 0 0;
+}
+
+.section_home_chat
+{
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.chat_box
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat_messeges
+{
+    padding: 0.5pc;
+    background-color: #d8f0ea;
+    border: solid grey;
+    border-width: .4pc 0 .4pc .4pc;
+    border-radius: 10px 0 0 10px;
+    width: 70%;
+}
+
+.chat_typing
+{
+    padding: 0.5pc;
+    border: solid .4pc gray;
+    border-radius: 0 10px 10px 0;
+    width: 30%;
+    background-image: linear-gradient(white 9rem, gray 0%);
+    min-height: 100px;
+}
+
+.author_of_chat_message
+    {
+        font-size: .6pc;
+        text-align: center;
+    }
+
+.chat_button
+{
+    margin: 0.5pc 0 0 30%;
+    font-size: .4rem;
+}
+
+.chat_adding_message
+{
+    width: 100%;
+    font-size: 45%;
+}
+
+.image_in_comment
+{
+    max-height: 5pc;
+    width: auto;
+}
+
+.chat_view
+{
+    display: flex;
+    font-size: 0.7pc;
+}
+
+.delete_chat_message
+{
+    font-size: 10px;
+    width: 1.5pc;
+    height: auto;
+    padding: 0;
+    margin-bottom: 2px;
+    margin-left: -10px;
+}
+
+.tsb_section
+{
+    border: solid 1px rgb(57, 202, 146);
+    background-color: rgb(57, 202, 146);
+    width: 100%;
+    padding: .4pc;
+    margin: auto;
+}
+
+.tsb_h1
+{
+    display: flex;
+    justify-content: center;
+}
+
+.top_container_tsb
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tsb_input_info
+{
+    padding-top: 6px;
+    font-size: 0.7pc;
+}
+
+.tsb_input_value
+{
+    border: solid 1px black;
+    border-radius: 10px;
+    background-color: rgb(86, 236, 178);
+    width: 60%;
+    font-size: 0.7pc;
+}
+
+.tsb_input_value::placeholder
+{
+    padding-left: 1pc;
+    color: rgb(0, 0, 0);
+}
+
+.tsb_date_button
+{
+    border: solid 1px;
+    border-radius: 10px;
+    background-color: rgb(86, 236, 178);
+    width: 25%;
+    font-size: 0.7pc;
+}
+
+.tsb_date_button:hover
+{
+    color: #5bf535;
+    background-image: linear-gradient(rgb(13, 79, 2) 50%,rgb(3, 69, 48) 50%);
+}
+
+.bottom_container_tsb
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.tsb_button_site
+{
+    display: grid;
+    width: 30%;
+}
+
+.choice_date
+{
+    font-size: .7pc;
+    margin-bottom: 1rem;
+}
+
+.tsb_button_minutes,
+.tsb_button_hours,
+.tsb_button_days
+{
+    border: solid 1px;
+    border-radius: 10px;
+    background-color: rgb(86, 236, 178);
+    margin-bottom: 0.5pc;
+    height: 1.6pc;
+    font-size: 0.7pc;
+    width: 100%;
+}
+
+.tsb_button_minutes:hover,
+.tsb_button_hours:hover,
+.tsb_button_days:hover
+{
+    color: rgb(86, 236, 178);
+    background-image: linear-gradient(rgb(23, 154, 0) 50%,rgb(5, 125, 177));
+}
+
+.tsb_output_site
+{
+    width: 70%;
+    padding-left: 2%;
+}
+
+.tsb_output_minutes,
+.tsb_output_hours,
+.tsb_output_days
+{
+    display: flex;
+    margin-bottom: 0.5pc;
+    font-weight: bold;
+    font-size: 0.7pc;
+    padding-bottom: 0.5pc;
+    justify-content: center;
+    align-items: center;
+    height: 2pc;
+    visibility: hidden;
+}
+
+.calculator_section
+{
+    padding: 2rem;
+    width: 100%;
+    background-color: #965f19;
+    height: 100vh;
+}
+
+.calculator_div
+{
+    display: flex;
+    justify-content: center;
+}
+
+.calculator
+{
+    margin: .2rem;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    border: solid 1rem gray;
+    border-radius: 10px;
+    grid-template-columns: repeat(4, 3.5rem);
+    grid-template-rows: minmax(7rem, auto) repeat(6, 2.5rem);
+}
+
+.calculator_output
+{
+    grid-column: 1 / -1;
+    background-color: #333533;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: solid 1rem gray;
+    word-wrap: break-word;
+    word-break: break-all;
+    min-height: 12pc;
+}
+
+.previous_result
+{
+    font-size: .8rempx;
+    font-weight: 400;
+    color: rgba(255,255,255, .8);
+}
+
+.current_result
+{
+    font-size: 1.8rem;
+    color: rgba(255,255,255, .8);
+}
+
+.calculator_button 
+{
+    cursor: pointer;
+    border: 1px solid #333533;
+    background: #242423;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.calculator_button:hover,
+.calculator_button:focus
+{
+    background: rgba(43, 43, 41, 0.95);
+}
+
+
+
+.vat_calculator_section
+{
+    height: auto;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #71f6de;
+}
+
+.vat_calculator_h1
+{
+    display: flex;
+    justify-content: center;
+}
+
+.container_vat_calculator
+{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 2rem;
+    border-bottom: solid 1px black;
+}
+
+.vat_calculator_button
+{
+    width: 30%;
+    height: auto;
+    font-size: 0.7pc;
+    font-weight: bold;
+    margin: 1pc;
+    border-radius: 10px;
+    background-color: #9eede9;
+    color: black;
+}
+
+.vat_calculator_button:hover
+{
+    background-color: #079305;
+    color: #e0ce33;
+    width: 35%;
+    transition: color 1s, background-color 1s, width 1s;
+}
+
+.vat_calculator_inputs
+{
+    background-color: #b0f6f6;
+}
+
+
+
+.gross_to_net_submit_button
+{
+    margin: 1pc 40% 1pc 40%;
+    width: 20%;
+    height: auto;
+}
+
+.gross_to_net_stuff,
+.net_to_gross_stuff
+{
+    display: none;
+}
+
+.gross_to_net_input
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1pc;
+}
+
+.gross_to_net_output
+{
+    width: 100%;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.gross_to_net_gross_value_name,
+.gross_to_net_vat_value_name,
+.gross_to_net_net_value_name
+{
+    margin: 0;
+    font-size: 1pc;
+    font-weight: bold;
+    color: #000000;
+}
+
+.gross_to_net_gross_value,
+.gross_to_net_net_value
+{
+    width: 60%;
+    border-radius: 5px;
+    margin: 0 0 1rem 0;
+}
+
+
+
+.gross_to_net_vat_value
+{
+    width: 60%;
+    border-radius: 5px;
+    margin: 0 0 1rem 0;
+}
+
+.gross_to_net_net_value_name
+{
+    padding-left: 0pc;
+}
+
+.net_to_gross_submit_button
+{
+    margin: 1pc 40% 1pc 40%;
+    width: 20%;
+    height: auto;
+}
+
+.gross_to_net_stuff,
+.net_to_gross_stuff
+{
+    display: none;
+}
+
+.net_to_gross_input
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1pc;
+}
+
+.net_to_gross_output
+{
+    width: 100%;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.net_to_gross_gross_value_name,
+.net_to_gross_vat_value_name,
+.net_to_gross_net_value_name
+{
+    margin: 0;
+    font-size: 1pc;
+    font-weight: bold;
+    color: #000000;
+}
+
+.net_to_gross_gross_value
+{
+    width: 60%;
+    border-radius: 5px;
+    margin: 0 0 1rem 0;
+}
+
+.net_to_gross_net_value
+{
+    width: 60%;
+    border-radius: 5px;
+    margin: 0 0 1rem 0;
+}
+
+
+
+.net_to_gross_vat_value
+{
+    width: 60%;
+    border-radius: 5px;
+    margin: 0 0 1rem 0;
+}
+
+.snake_conatainer
+{
+    text-align: center;
+}
+
+.container_games
+{
+    border: solid 3px;
+    border-radius: 0 0 10% 10%;
+    border-color: #09c4b1;
+    text-align: center;
+
+    background: conic-gradient(at center center, 
+    #0affe8 5%, transparent 5%,transparent 5%, #eeeeee 5%, 
+    #c8c6c6  10%, transparent 10%,transparent 10%, #0affe8 10%,
+    #0affe8 15% , transparent 15%,transparent 15%, #eeeeee 15%, 
+    #c8c6c6  20%, transparent 20%, transparent 20%, #0affe8 20%,
+    #0affe8 25% , transparent 25%,transparent 25%, #eeeeee 25%, 
+    #c8c6c6  30%, transparent 30%,transparent 30%, #0affe8 30%,
+    #0affe8 35% , transparent 35%,transparent 35%, #eeeeee 35%, 
+    #c8c6c6  40%, transparent 40%, transparent 40%, #0affe8 40%,
+    #0affe8 45% , transparent 45%,transparent 45%, #eeeeee 45%,
+    #c8c6c6  50%, transparent 50%,transparent 50%, #0affe8 50%,
+    #0affe8 55% , transparent 55%,transparent 55%, #eeeeee 55%, 
+    #c8c6c6  60%, transparent 60%, transparent 60%, #0affe8 60%,
+    #0affe8 65% , transparent 65%,transparent 65%, #eeeeee 65%, 
+    #c8c6c6  70%, transparent 70%,transparent 70%, #0affe8 70%,
+    #0affe8 75% , transparent 75%,transparent 75%, #eeeeee 75%, 
+    #c8c6c6  80%, transparent 80%, transparent 80%, #0affe8 80%,
+    #0affe8 85% , transparent 85%,transparent 85%, #eeeeee 85%,
+    #c8c6c6  90%, transparent 90%,transparent 90%, #0affe8 90%,
+    #0affe8 95% , transparent 95%,transparent 95%, #eeeeee 95%, 
+    #c8c6c6  100%, transparent 100%, transparent 100%, #0affe8 100%
+    
+    ), 
+    transparent 100%;
+}
+
+.text_games
+{
+    font-size: 2rem;
+    font-weight: bold;
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: rgb(255, 34, 34);
+}
+
+.games_container_left_site
+{
+    width: 40%;
+    border: 3px solid rgb(193 12 255);
+    border-radius: 10px;
+    padding: 0.2rem;
+    margin: 1pc auto 1pc auto;
+    align-items: center;
+    display: grid;
+    justify-content: center;
+}
+
+.name_game_left_site
+{
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #0e0eeb;
+}
+
+.games_button_play
+{
+    font-weight: bold;
+    background-color: #33619f;
+    color: silver;
+}
+
+.snake_conatainer
+{
+    padding: 1rem 0 1rem 0;
+}
+
+.snake_h1
+    {
+        background: linear-gradient(
+            45deg, #015201 41%, #4CAF50  43%, 
+                   #015201 49%, #4CAF50 51%,
+                   #015201 55%, #4CAF50 57%);
+
+
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+.snake_options
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding-bottom: .5rem;
+    background-color: grey;
+}
+
+.game_speed
+{
+    width: 40%;
+}
+
+.game_score
+{
+    width: 25%;
+}
+
+.game_best_score
+{
+    width: 50%;
+}
+
+.high_pc_score
+{
+    color: #27d5eb;
+    font-weight: bold;
+    display: none;
+}
+
+.high_mobile_score
+{
+    color: #27d5eb;
+    font-weight: bold;
+    display: contents;
+}
+
+.player_score
+{
+    display: contents;
+}
+
+.snake_board
+{
+    height: 350px;
+    width: 350px;
+}
+
+.snake_reset_button
+{
+    width: 20%;
+    border: solid 2px gold;
+    border-radius: 10px;
+    font-weight: bold;
+    color: gold;
+    background-image: radial-gradient(black, transparent);
+    height: 1.2rem;
+    padding: 0;
+    margin-right: 0%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.game_score
+{
+    font-weight: bold;
+    color: #24e324;
+}
+
+.controls
+{
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.arrow
+{
+    border: none;
+    border-left: 0.35rem solid #fff;
+    border-bottom: 0.35rem solid #fff;
+    width: 1.5rem;
+    height: 1.5rem;
+    transform: rotate(135deg);
+    background-color: grey;
+}
+
+.arrow_up
+{
+    transform: rotate(135deg);
+    margin-top: 7px;
+}
+
+.arrow_down
+{
+    transform: rotate(-45deg);
+    margin-top: -7px;
+}
+
+.arrow_left
+{
+    transform: rotate(45deg);
+}
+
+.arrow_right
+{
+    transform: rotate(225deg);
+}
+
+.yt_video_div
+{
+    text-align: center;
+    padding: 2rem;
+}
+
+.yt_downloader_h1
+{
+    border-radius: 10px;
+    background: red;
+    color: white;
+    font-weight: bold;
+    padding: .5rem;
+}
+
+.yt_video_input
+{
+    width: 100%;
+    padding-left: 1rem;
+    margin: 2rem 0;
+}
+
+.yt_video_submit_button
+{
+    width: 30%;
+    height: auto;
+    border-radius: 20px;
+    background-color: green;
+    color: white;
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+.yt_video_refresh_button
+{
+    width: 20%;
+    height: auto;
+    border-radius: 20px;
+    background-color: #FF9800;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: block;
+    margin-left: 39%;
+    text-decoration: none
+}
+
+.loading-forever-icon
+{
+    display: block;
+    margin-left: 47%;
+    margin-top: 2%;
+    width: 20px;
+}
+
+
+.yt_video_div_stream_info
+{
+    padding: .5rem;
+}
+
+.yt_stream_info_url,
+.yt_stream_info_channel
+{
+    display: contents;    
+}
+
+.url_to_video,
+.url_to_channel
+{
+    font-size: .6rem;
+    color: #2076e1;
+}
+
+.yt_stream_info_div
+{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 1rem 0;
+}
+
+.yt_stream_info_p
+{
+    color: #c4c4c4;
+    margin: 0;
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+.yt_stream_info_samp
+{
+    color: #fddd20;
+    font-weight: bold;
+}
+
+.download_yt_video_text
+{
+    padding: 1rem 0 0 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #891414;
+    text-align: center;
+    text-shadow: 0 0 0.5rem #991111;
+}
+
+.download_yt_video_div
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 0;
+}
+
+.download_yt_video_button
+{
+    position: relative;
+    width: 20%;    
+    border: solid 3px silver;    
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: .8rem;
+    font-weight: bold;
+    color: #9064d1;
+    background-color: #58f360;
+    margin: 1rem 0;
+}
+
+.prices_scraper_div
+{
+    background-color: grey;
+    border: 3px dashed #8BC34A;
+    padding-bottom: 1rem;
+}
+
+.prices_scraper_h1
+{
+    text-align: center;
+    font-size: 2.4rem;
+    color: #f8d935;
+    margin: 1rem 0;
+}
+
+.prices_scraper_choice_options
+{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+}
+
+.prices_scraper_choice_button
+{
+    width: 75%;
+    border: none;
+    border-radius: 10px;
+}
+
+.prices_scraper_ceneo_text,
+.prices_scraper_XX_text,
+.prices_scraper_YY_text
+{
+    font-weight: bold;
+    font-size: 1rem;
+    color: #b6c06e;
+    margin: 1rem 0;
+    padding: 0;
+    text-align: center;
+}
+
+.prices_scraper_ceneo
+{
+    background-color: #ff9144;
+    color: white;
+    font-weight: bold;
+    border: solid 2px;
+}
+
+.prices_scraper_ceneo_urls,
+.prices_scraper_XX_urls,
+.prices_scraper_YY_urls
+{
+    width: 80%;
+    margin: 1rem auto;
+}
+
+.prices_scraper_input
+{
+    width: 100%;
+    padding-left: .4rem;
+    margin: .5rem 0;
+}
+
+.prices_scraper_ceneo_button_div,
+.prices_scraper_XX_button_div,
+.prices_scraper_YY_button_div
+{
+    display: flex;
+    justify-content: center;
+}
+
+.prices_scraper_ceneo_button,
+.prices_scraper_XX_button,
+.prices_scraper_YY_button
+{
+    width: 40%;
+    border-radius: 0px 50px 15px 50px;
+    border: solid 2px greenyellow;
+    background-color: green;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0 0 1rem 0;
+    padding-bottom: 1%;
+}
+
+.prices_scraper_output
+{
+    font-size: .8rem;
+    font-weight: bold;
+    color: #9fd198;
+    margin: 1rem;
+    border: solid 3px rgb(224, 224, 155);
+    border-radius: 10px;
+}
+
+.prices_scraper_output p
+{
+    margin: 0;
+    text-align: center;
+}
+
+.prices_scraper_output_up_div
+{
+    padding: 1rem;
+    border-bottom: solid 2px rgb(224, 224, 155);
+    font-size: 1rem;
+}
+
+.prices_scraper_output_best_store_name
+{
+    font-size: 1.4rem;
+    color: rgb(229, 225, 9);
+    margin-bottom: 0.5rem;
+}
+
+.prices_scraper_output_best_price_amound
+{
+    display: flex;
+    justify-content: center;
+}
+
+.prices_scraper_output_best_price_value
+{
+    padding-left: 2%;
+    color: #f6981c;
+}
+
+.prices_scraper_output_bottom_div
+{
+    padding: 0.5rem;
+    font-size: .8rem;
+}
+
+.prices_scraper_output_bottom_stuff
+{
+    display: grid;
+    grid-template-columns: 75% 25%;
+    border-bottom: solid 1px;
+    padding: 0.4rem 0;
+}
+
+.prices_scraper_output_bottom_stuff_price
+{
+    color: #f6981c;
+}
+
+.prices_scraper_output_bottom_stuff_name a
+{
+    color: #aade04;
+    text-decoration: none;
+}
+
+.links_for_items
+{
+    font-size: .5rem;
+}
+
+
+@media (min-width: 900px) 
+{
+    .navbar-nav
+    {
+        margin-bottom: 0rem !important;
+    }
+
+    .form-control
+    {
+        margin-right: .5rem;
+    }
+
+    .btn-navbar
+    {
+        background-color: rgb(33, 37, 41);
+        color: #198754;
+    }
+
+    .btn-navbar:hover
+    {
+        background-color: #198754;
+        color: white;
+    }
+
+    .head-container 
+    {
+        display: flex;
+        justify-content: center;
+    }
+
+    .left-container
+    {
+        display: block;
+        width: 15%;
+        height: auto;
+        background-color: grey;
+    }
+
+    .middle-container
+    {
+        max-width: 1000px;
+        width: 70%;
+        background-color: white;
+        margin: 2pc;
+        min-height: 38pc;
+    }    
+
+    .right-container
+    {
+        display: block;
+        width: 15%;
+        height: auto;
+        padding: 0;
+        background-color: grey;
+    }
+
+    .container_currency_converter
+    {
+        border: none;
+        border-radius: 5%;
+        margin: 1.5pc 1pc;
+        padding: 0.5pc 0 0.5pc 1pc;
+        background-image: linear-gradient(rgba(151, 72, 2, 0.614),rgba(46, 29, 12, 0.614));  
+    }
+
+    .currency_converter_name
+    {
+        color: white;
+        font-weight: bold;
+        padding-left: 0.5pc;
+    }
+
+    .left_site_programs,
+    .left_site_games
+    {
+        margin: 1rem !important;
+    }
+
+    .container_programs,
+    .container_games
+    {
+        border-radius: 10%;
+    }
+
+
+    .text_time_since_birth
+    {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .text_vat_calculator
+    {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .section_home_upper
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .container_home_left
+    {
+        width: 30%;
+    }
+
+    .container_home_left_else
+    {
+        width: 70%;
+    }
+
+    .title_home
+    {
+        width: 100%;
+        height: auto;
+        padding-right: 1pc;
+        font-size: 2pc;
+    
+        background: conic-gradient(at center center,  
+          var(--color-1) 20%, 
+          transparent 20%,transparent 20%, 
+          var(--color-2) 20%, var(--color-2)  48%,
+          transparent 39%,transparent 40%, 
+          var(--color-3) 48%,var(--color-3) 61% ,
+          transparent 61%,transparent 61%, 
+          var(--color-4) 61%, var(--color-4) 88%,
+          transparent 88%, transparent 80%, 
+          var(--color-5) 80%),
+          transparent 99%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    .title_home_else
+    {
+        width: 100%;
+        height: auto;
+        padding-left: 1pc;
+        font-size: 2.4pc;
+    }
+
+    .info_after_login
+    {
+        width: 100%;
+        height: auto;
+        font-size: 1.2pc;
+        color: rgb(13, 127, 5);
+        margin: 2pc 0 0 0 ;
+        padding: 0 0 0 2pc
+    }
+
+    .section_home_bottom
+    {
+        padding-top: 2rem;
+        text-align: left;
+        font-size: 2rem;
+        background: linear-gradient(120deg, red 5% 5%, rgb(240, 236, 12) 7% 5%,
+                                            rgb(85, 227, 255) 25% 18%, rgb(240, 236, 12) 35% 5%,
+                                            red 45% 5%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    .my_profile_btn_home
+    {
+        font-weight: bold;
+        border: solid 1px;
+        border-color: #19e9e9;
+        border-radius: 5px;
+        background: linear-gradient(160deg, red 0% 10%,blue 10% 20%,green 20% 30%,
+                                            red 30% 40%,blue 40% 50%,green 50% 60%,
+                                            red 70% 80%,blue 80% 90%,green 90% 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    .container_home_right
+    {
+        width: 70%;
+    }
+
+    .container_home_right_else
+    {
+        width: 30%;
+    }
+
+    .section_home_chat
+    {
+        width: 100%;
+        margin-top: 3rem;
+        margin-bottom: 4rem;
+    }
+
+    .chat_messeges
+    {
+        padding: 0.5pc;
+        background-color: #d8f0ea;
+        border: solid grey;
+        border-width: 2pc 0 2pc 2pc;
+        border-radius: 10px 0 0 10px;
+        width: 70%;
+    }
+    
+    .chat_typing
+    {
+        padding: 0.5pc;
+        padding-left: 1.5pc;
+        border: solid 2pc gray;
+        border-radius: 0 10px 10px 0;
+        width: 30%;
+        background-image: linear-gradient(white 9rem, gray 0%);
+        min-height: 100px;
+    }
+    
+    .chat_view
+    {
+        display: flex;
+        font-size: 1pc;
+    }
+
+    .chat_button
+    {
+        margin: 0.5pc 0 0 35%;
+        font-size: 1rem;
+    }
+    
+    .author_of_chat_message
+    {
+        font-size: 1pc;
+    }
+
+
+    .chat_adding_message
+    {
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    .weather_media
+    {
+        width: auto;
+        border: none;
+        border-radius: 25%;
+        margin: 1.5pc 1pc;
+        padding: 1pc;
+        background-image: linear-gradient(rgb(218, 248, 248),skyblue);
+    }
+
+    .last_post_right_site
+    {
+        width: auto;
+        border: none;
+        border-radius: 5%;
+        margin: 1.5pc 1pc;
+        padding: 0.5pc;
+        background-image: linear-gradient(rgb(187, 184, 246),rgb(90, 80, 125));    
+    }
+
+    .last_comments_right_site_h5
+    {
+        color: #936805;
+    }
+
+    .last_3_comments_right_site
+    {
+        border: solid 2px;
+        border-color: rgb(44, 77, 6);
+        margin: 1.5pc 1pc;
+        padding: 0.5pc;
+        background-image: linear-gradient(rgb(191, 249, 55),rgb(89, 196, 18));  
+    }
+
+
+
+    .currency_title_button
+    {
+        position: relative;
+        margin: 1pc;
+        font-size: 1.2pc;
+        width: 65%;
+        height: 65%;
+        font-weight: bold;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        background-color: #936805;
+        border: 1px solid #936805;
+        border-radius: 20px;
+    }
+
+    .changes_from_p_value
+    {
+        font-size: 2pc;
+        color: var(--color-warm-white);
+        border: dashed 4px #aa8d2a;
+        border-radius: 30px;
+        background-color: #844e09;
+        margin: 0 0 10px -30%;
+        padding: 0;
+        width: 80%;    
+    }
+
+    .changes_output_from_value
+    {
+        width: 20% !important; 
+        margin: 0 0 0 40% !important;
+    }
+
+    .changes_outputs_value
+    {
+        grid-template-columns: 25% 25% 25% 25%;
+    }
+
+    .currency_converter_in_date_stuff
+    {
+        margin: 2pc;
+    }
+
+    .currency_converter_in_date_stuff_top
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .currency_converter_in_date_stuff_top_left,
+    .currency_converter_in_date_stuff_top_right
+    {
+        display: grid;
+        width: 45%;
+    }
+
+    .currency_p
+    {
+        margin: 0;
+        font-size: 1pc;
+    }
+
+    .input_from,
+    .input_amound,
+    .input_to,
+    .btn-convert
+    {
+        width: 90%;
+        height: 2pc;
+        font-size: 1pc;
+    }
+
+    .currency_converter_in_date_stuff_bottom
+    {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    .date_changes_from_p_value
+    {
+        margin: 2% 40% 2% 40%;
+        width: 20%; 
+    }
+
+    .date_changes_output_columns
+    {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .date_changes_output_stuff
+    {
+        margin-left: 2pc;
+    }
+
+    .currency_converter_show_list_names_button,
+    .currency_converter_hide_list_names_button
+    {
+        width: 50%;
+        font-size: 2pc;
+    }
+
+    .currency_list
+    {
+        font-size: 1.5pc;
+        margin: 1pc;
+    }
+
+    .list_of_currency_list
+    {
+        margin-left: 1pc;
+    }
+
+    .currency_converter_submit_button
+    {
+        font-size: 0.85pc;
+    }
+
+    .currency_converter_submit_button_left_site
+    {
+        width: 33%;
+        font-size: 0.75pc;
+    }
+
+
+    .currency_converter_more_options_button
+    {
+        width: 51%;
+        font-size: 0.85pc;
+    }
+
+    .tsb_section
+    {
+        width: 70%;
+        padding: 1pc;
+    }
+
+    .tsb_input_info
+    {
+        font-size: 1pc;
+    }
+
+    .tsb_input_value
+    {
+        width: 28%;
+        font-size: 1pc;
+    }
+
+    .tsb_date_button
+    {
+        width: 20%;
+        font-size: 1pc;
+    }
+
+    .choice_date
+    {
+        font-size: 1pc;
+    }
+
+    .tsb_button_site
+    {
+        width: 50%;
+    }
+
+    .tsb_output_site
+    {
+        width: 50%;
+    }
+
+    .tsb_button_minutes,
+    .tsb_button_hours,
+    .tsb_button_days
+    {
+        border: solid 1px;
+        border-radius: 10px;
+        background-color: rgb(86, 236, 178);
+        margin-bottom: 0.5pc;
+        height: 2pc;
+        font-size: 1pc;
+    }
+   
+    .tsb_output_minutes,
+    .tsb_output_hours,
+    .tsb_output_days
+    {
+        font-size: 0.95pc;
+        padding-bottom: 0pc;
+    } 
+
+    .calculator
+    {
+        grid-template-columns: repeat(4, 6rem);
+        grid-template-rows: minmax(7rem, auto) repeat(6, 4rem);
+    }
+
+    .previous_result
+    {
+        font-size: 1.4rem;
+    }
+
+    .current_result
+    {
+        font-size: 3rem;
+    }  
+
+    .calculator_button
+    {
+        font-size: 1.6rem;
+    }
+
+    .vat_calculator_button
+    {
+        width: 20%;
+        font-size: 1.2pc;
+    }
+
+    .vat_calculator_button:hover
+    {
+        width: 25%;
+    }
+
+    .gross_to_net_gross_value_name,
+    .gross_to_net_vat_value_name,
+    .gross_to_net_net_value_name
+    {
+        margin: 0;
+        font-size: 1.4pc;
+        font-weight: bold;
+        color: #000000;
+    }
+
+    .gross_to_net_input
+    {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .gross_to_net_gross_value,
+    .gross_to_net_net_value
+    {
+        width: 16%;
+        border-radius: 5px;
+        margin: 0 4pc 0 0;
+    }
+
+    .gross_to_net_vat_value
+    {
+        width: 14%;
+        margin: 0;
+    }
+
+    .gross_to_net_net_value_name
+    {
+        padding-left: 2pc;
+    }
+
+    .net_to_gross_input
+    {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .net_to_gross_gross_value_name,
+    .net_to_gross_vat_value_name,
+    .net_to_gross_net_value_name
+    {
+        font-size: 1.4pc;
+    }
+
+    .net_to_gross_gross_value
+    {
+        width: 16%;
+        margin: 0 4pc 0 0;
+    }
+
+    .net_to_gross_vat_value
+    {
+        width: 14%;
+        margin: 0 2pc 0 0;
+    }
+
+    .net_to_gross_net_value
+    {
+        width: 16%;
+        margin: 0 2pc 0 0;
+    }
+
+    .btn-add-post
+    {
+        margin: 0 0 3rem 0.5rem;
+    }
+
+    .hr_shadow 
+    {
+        visibility: visible;
+    }
+
+    .post_title_in_posts
+    {
+        font-size: 2rem;
+    }
+
+    .posts_avatar
+    {
+        width: 200px;
+    }
+
+    .posts_table
+    {
+        margin-bottom: 1rem;
+    }
+
+    .post_title_in_post
+    {
+        font-size: 2rem;
+    }
+
+    .post_avatar
+    {
+        width: 150px;
+    }
+
+    .post_about_author_poster_name
+    {
+        font-size: 1.25rem;
+    }
+
+    .post_about_author_info
+    {
+        margin: 1pc 1pc 0 2pc;
+    }
+
+    .post_about_author_info_content
+    {
+        font-size: 1rem;
+    }
+
+    .comment_form_in_post
+    {
+        margin-left: 0;
+        width: 100%;
+        padding-bottom: 0;
+    }
+
+    .comment_in_post
+    {
+        padding: 1rem;
+        margin: 0 0 1rem 0;
+        width: 100%;
+    }
+
+    .back_to_post_btn
+    {
+        color: #6c757d;
+        background-color: white;
+        margin: 0;
+    }
+    
+    .back_to_post_btn:hover
+    {
+        color: white;
+        background-color: #6c757d;
+    }
+
+    .image_in_comment
+    {
+        max-height: 7pc;
+        width: auto;
+    }
+
+    .btn-vsm-40
+    {
+        margin-left: 1pc;
+    }
+
+    .edit_comment
+    {
+        width: 100%;
+        padding: 1rem;
+        margin: 0 0 1rem 0;
+    }
+
+    .edit_comment_input
+    {
+        width: 100%;
+        margin: 0 0 1rem 0;
+        padding: 0;
+    }
+
+    .dashboard_avatar
+    {
+        width: 250px;
+    }
+
+    .default_avatar
+    {
+        font-size: 1rem;
+        margin-left: 16%;
+        height: 25px;
+    }
+
+    .dashboard_delete_btn
+    {
+        margin: 0;
+    }
+
+    .avatar_in_user
+    {
+        width: 330px;
+        float: left;
+    }
+    
+    .user_profile_avatar
+    {
+        padding-left: 2pc;
+    }
+
+    /* .user_profile_top_right
+    {
+        display: grid;
+    } */
+
+    .user_profile_about_me
+    {
+        font-size: 1.2pc;
+        padding-left: 2pc;
+        margin-top: -1.2pc;
+    }
+
+    .user_profile_about_me_text
+    {
+        background: linear-gradient(rgb(190, 143, 4), rgb(120, 131, 1));
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        font-size: 1pc;
+    }
+
+    .user_profil_post
+    {
+        width: 100%;
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    .user_profile_top
+    {
+        padding: 0;
+    }
+
+    .user_profil_posts_text
+    {
+        color:rgba(106, 81, 221, 0.484);
+        margin: 0;
+    }
+
+    .user_profil_comment_text
+    {
+        color: rgba(81, 174, 14, 0.484);
+        margin: 0;
+    }
+
+    .user_profil_comments
+    {
+        width: 100%;
+        padding: 1pc;
+        margin: 0;
+    }
+
+    .set_default_avatar
+    {
+        background-color: #fff;
+        color: #6c757d;
+    }
+    
+    .set_default_avatar:hover
+    {
+        background-color: #6c757d;;
+        color: #fff;
+    }
+
+    .users
+    {
+        font-size: 1rem;
+        color: #000000;
+        padding: 0;
+    }
+
+    .snake_conatainer
+    {
+        padding: 0;
+    }
+
+    .game_speed
+    {
+        width: 35%;
+    }
+
+    .snake_options
+    {
+        justify-content: space-between;
+        width: 500px;
+        margin-left: 250px;
+        background-color: dimgray;
+    }
+
+
+    .high_pc_score
+    {
+        display: contents;
+    }
+    
+    .high_mobile_score
+    {
+        display: none;
+    }    
+
+    .snake_board
+    {
+        height: 500px;
+        width: 500px;
+    }
+
+    .controls
+    {
+        display: none;
+    }
+
+    .snake_reset_button
+    {
+        width: 25%;
+        margin-right: 10%;
+    }    
+
+    .game_best_score
+    {
+        width: 35%;
+    }
+
+    .yt_video_div
+    {
+        background-color: #e4dfdf;
+    }
+    
+    .yt_downloader_h1
+    {
+        border-radius: 10px;
+        background: red;
+        color: white;
+        font-weight: bold;
+        padding: .5rem;
+    }
+    
+    .yt_video_input
+    {
+        width: 100%;
+        padding-left: 1rem;
+        margin: 2rem 0;
+    }
+    
+    .yt_video_submit_button
+    {
+        width: 15%;
+        font-size: 1.2rem;
+    }
+
+    .yt_video_refresh_button
+    {
+        width: 15%;
+        font-size: 1.4rem;
+        margin-left: 43%; 
+    }
+    
+    .loading-forever-icon
+    {
+        margin-left: 49%; 
+    }
+    .yt_video_div_stream_info
+    {
+        padding: 1rem;
+        background-color: #e4dfdf;
+    }
+
+    .yt_stream_info_div
+    {
+        margin: 3rem 0;
+    }
+
+    .yt_stream_info_p
+    {
+        color: #8BC34A;
+        font-size: 1.4rem;
+    }
+
+    .yt_stream_info_samp
+    {
+        color: #000000;
+        margin-left: .4rem;
+    }
+
+    .url_to_video, 
+    .url_to_channel
+    {
+        font-size: 1.2rem;
+        color: #12a0c0;
+    }
+
+    .download_yt_div
+    {
+        background-color: #e4dfdf;
+    }
+
+    .download_yt_video_text
+    {
+        font-size: 2rem;
+    }
+
+    .download_yt_video_div
+    {
+        padding-bottom: 3rem;
+    }
+
+    .download_yt_video_button
+    {
+        font-size: 1.4rem;
+        background-color: green;
+        border: solid 4px #5e048e;
+    }
+
+    .download_yt_video_button:hover
+    {
+        animation: animate2 1s linear infinite, animate3 2s linear infinite;
+        background-color: #58f360;
+    }
+
+
+    @keyframes animate2
+    {
+        0%
+        {
+            color: #772fae;
+        }
+        25%
+        {
+            color: #fff53d;
+        }
+        50%
+        {
+            color: #772fae;
+        }
+        75%
+        {
+            color: #fff53d;
+        }
+        100%
+        {
+            color: #772fae;
+        }
+    }
+    @keyframes animate3
+    {
+        0%
+        {
+            border-color: #fff53d;
+        }
+        25%
+        {
+            border-color: #772fae;
+        }
+        50%
+        {
+            border-color: #fff53d;
+        }
+        75%
+        {
+            border-color: #772fae;
+        }
+        100%
+        {
+            border-color: #fff53d;
+        }
+    }
+
+    .singup_home_on_foto
+    {
+        font-size: 3rem;
+    }
+    
+    .login_home_on_foto
+    {
+        font-size: 3rem;
+    }
+    
+    .singup_home_on_foto:hover,
+    .singup_home:hover
+    {
+        text-shadow: 0 0 1rem #00BCD4
+    }
+    
+    .login_home_on_foto:hover,
+    .login_home:hover
+    {
+        text-shadow: 0 0 1rem #27fd03;
+    }
+    
+    .my_name_after_login:hover
+    {
+        font-weight: bold;
+        text-shadow: 0 0 1rem rgb(115, 255, 0);
+    }
+
+    .name_program_left_site
+    {
+        font-size: 18px;
+    }
+   
+    .prices_scraper_output_up_div
+    {
+        font-size: 2rem;
+    }
+
+    .prices_scraper_output_best_store_name
+    {
+        font-size: 2.8rem;
+    }
+
+    .prices_scraper_output_bottom_div
+    {
+        font-size: 1.4rem;
+    }
+
+    .links_for_items
+    {
+        font-size: .8rem;
+    }
+
+
+
+
+
+}

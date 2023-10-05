@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+
+
+<section class="tsb_section">
+    <form method="POST" >
+        <h1 class="tsb_h1">TIME SINCE BIRTH</h1>
+        <div class="container_tsb">
+            <div class="top_container_tsb">
+                <h2 class="tsb_input_info" >Enter your date of birth YYYY-MM-DD H:M:S</h2>
+                <input type="tsb_input_value" name="tsb_input_value" id="tsb_input_value" class="tsb_input_value" placeholder="YYYY-MM-DD H:M:S">
+                <button class="tsb_date_button" href="{{url_for('show_time_since_birth')}}" id="tsb_date_button" type="submit" >Add date</button>
+            </div>
+            <div class="choice_date" name="choice_date" id="choice_date"><b>{{ text }}{{ birth }}</b></div>
+            <div class="bottom_container_tsb" id="bottom_container_tsb">
+                <div class="tsb_button_site">
+                    <button type="button" id="tsb_button_minutes" class="tsb_button_minutes" >Show in minutes</button>
+                    <button id="tsb_button_hours" class="tsb_button_hours" type="button">Show in hours</button>
+                    <button id="tsb_button_days" class="tsb_button_days" type="button">Show in days</button>
+                </div>
+                <div class="tsb_output_site">
+                    <div class="tsb_output_minutes" id="tsb_output_minutes">
+                        {% if minutes %}
+                            {{ text2 }}
+                            {% if minutes | length < 3 %} {{ minutes }} minutes
+                            {% elif minutes | length > 3 and minutes | length <= 6 %} {{ minutes[-6:-3] }}.{{ minutes[-3:] }} minutes
+                            {% elif minutes | length > 6 and minutes | length <= 9 %} {{ minutes[:-6] }}.{{ minutes[-6:-3] }}.{{ minutes[-3:] }} minutes
+                            {% elif minutes | length > 9 and minutes | length <= 12 %} {{ minutes[:-9] }}.{{ minutes[-9:-6] }}.{{ minutes[-6:-3] }}.{{ minutes[-3:] }} minutes
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                    <div class="tsb_output_hours" id="tsb_output_hours">
+                        {% if hours %}
+                            {{ text2 }}
+                            {% if hours | length < 3 %} {{ hours }} hours
+                            {% elif hours | length > 3 and hours | length <= 6 %} {{ hours[-6:-3] }}.{{ hours[-3:] }} hours
+                            {% elif hours | length > 6 and hours | length <= 9 %} {{ hours[:-6] }}.{{ hours[-6:-3] }}.{{ hours[-3:] }} hours
+                            {% elif hours | length > 9 and hours | length <= 12 %} {{ hours[:-9] }}.{{ hours[-9:-6] }}.{{ hours[-6:-3] }}.{{ hours[-3:] }} hours
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                    <div class="tsb_output_days" id="tsb_output_days">
+                        {% if days %}
+                            {{ text2 }}
+                            {% if days | length < 3 %} {{ days }} days
+                            {% elif days | length > 3 and days | length <= 6 %} {{ days[-6:-3] }}.{{ days[-3:] }} days
+                            {% elif days | length > 6 and days | length <= 9 %} {{ days[:-6] }}.{{ days[-6:-3] }}.{{ days[-3:] }} days
+                            {% elif days | length > 9 and days | length <= 12 %} {{ days[:-9] }}.{{ days[-9:-6] }}.{{ days[-6:-3] }}.{{ days[-3:] }} days
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</section>
+
+{% endblock %}
