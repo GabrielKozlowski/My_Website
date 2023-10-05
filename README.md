@@ -2,11 +2,12 @@
 
 <h3>My website created in Python language using Flask framework.</h3>
 
-<h4>I invite you to see it here</h4>
+<h4>I invite you to see it here:</h4>
 <url>https://gabriel-kozlowski-website.onrender.com/</url>
 <h6>The page takes a while to load</h6>
 
 <h2>Lists of content</h2>
+<li>[your link here](https://www.youtube.com/watch?v=-NTPxWC7TqY&ab_channel=ArcticMoon)</li>
 <li>[General info] (https://github.com/GabrielKozlowski/My_Website/blob/master/README.md#general-info)</li>
 <li>[Technologies] (https://github.com/GabrielKozlowski/My_Website/blob/master/README.md#technologies)</li>
 <li>[Python library] (https://github.com/GabrielKozlowski/My_Website/blob/master/README.md#python-library)</li>
@@ -65,5 +66,5 @@ a program to calculate days from the date of birth.</h3>
 
 <h2><b>Status</b></h2>
 
-<h3>This project is now completed
-but is also being updated.</h3>
+<h3>This project is now complete.</h3>
+<h3>It is updated from time to time.</h3>
