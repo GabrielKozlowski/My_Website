@@ -1,8 +1,10 @@
 <h1><b>My WebSite</b></h1>
 
 <h3>My website created in Python language using Flask framework.</h3>
-<url>https://gabriel-kozlowski-website.onrender.com/</url>
 
+<h4>I invite you to see it here</h4>
+<url>https://gabriel-kozlowski-website.onrender.com/</url>
+The page takes a while to load
 
 <h2><b>General Info</b></h2>
 
@@ -21,7 +23,9 @@
 
 
 
-<h3>There are also programs such as Kalkulator, Price scrapper, Vat Calkulator, YouTube Informator or a program to calculate days from the date of birth.</h3>
+<h3>There are also programs such as 
+Calculator, Price scrapper, Vat Calculator, YouTube Information or 
+a program to calculate days from the date of birth.</h3>
 
 <img src="/static/images/programs_foto.png">
 
@@ -54,4 +58,4 @@
 
 <h2><b>Status</b></h2>
 
-This project is still in the development stage.
+<h3>This project is now <b><u>complete</b></u> but is also being updated.</h3>
