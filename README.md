@@ -4,7 +4,7 @@
 
 <h4>I invite you to see it here</h4>
 <url>https://gabriel-kozlowski-website.onrender.com/</url>
-The page takes a while to load
+<h5>The page takes a while to load</h5>
 
 <h2><b>General Info</b></h2>
 
