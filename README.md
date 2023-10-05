@@ -8,7 +8,7 @@
 
 ## Lists of content
 
-###<li>[General info](https://github.com/GabrielKozlowski/My_Website/blob/master/README.md#general-info)</li>
+* [General info](https://github.com/GabrielKozlowski/My_Website/blob/master/README.md#general-info)
 ###<li>[Technologies](https://github.com/GabrielKozlowski/My_Website/blob/master/README.md#technologies)</li>
 ###<li>[Python library](https://github.com/GabrielKozlowski/My_Website/blob/master/README.md#python-library)</li>
 ###<li>[Status](https://github.com/GabrielKozlowski/My_Website/blob/master/README.md#status)</li>
